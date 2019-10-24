@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClassNamer</name>
+    </assembly>
+    <members>
+        <member name="T:ClassNamer.Program">
+            <summary>
+            Main program class.
+            </summary>
+        </member>
+        <member name="M:ClassNamer.Program.Main">
+            <summary>
+            Application entry point.
+            </summary>
+        </member>
+    </members>
+</doc>

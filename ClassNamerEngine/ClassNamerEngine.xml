@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClassNamerEngine</name>
+    </assembly>
+    <members>
+        <member name="T:ClassNamerEngine.Configuration.ClassNamerConfiguration">
+            <summary>
+            Main configuration class for all ClassNamer bussiness logic.
+            </summary>
+        </member>
+        <member name="P:ClassNamerEngine.Configuration.ClassNamerConfiguration.Combinations">
+            <summary>
+            Gets collection of possible <see cref="T:ClassNamerEngine.Puller.NamePart"/> combinations along with weight associated to it.
+            </summary>
+        </member>
+        <member name="P:ClassNamerEngine.Configuration.ClassNamerConfiguration.WordsSet">
+            <summary>
+            Gets dictionary of available words to pull from. The words are normalized (first letter is big, the rest are small).
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Configuration.ClassNamerConfiguration.#ctor(ClassNamerEngine.Puller.Combination[],System.Collections.Generic.Dictionary{ClassNamerEngine.Puller.NamePart,System.String[]})">
+            <summary>
+            Initializes a new instance of the <see cref="T:ClassNamerEngine.Configuration.ClassNamerConfiguration"/> class.
+            </summary>
+            <param name="combinations">Collection of possible <see cref="T:ClassNamerEngine.Puller.NamePart"/> combinations along with weight associated to it.</param>
+            <param name="wordsSet">Dictionary of available words to pull from.</param>
+        </member>
+        <member name="T:ClassNamerEngine.Configuration.ConfigurationReader">
+            <summary>
+            Default implementation of <see cref="T:ClassNamerEngine.Configuration.IConfigurationReader"/>.
+            Reads implementation from appsettings.json that is in the current working folder.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Configuration.ConfigurationReader.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ClassNamerEngine.Configuration.ConfigurationReader"/> class.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Configuration.ConfigurationReader.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ClassNamerEngine.Configuration.ConfigurationReader"/> class.
+            </summary>
+            <param name="settingsFile">File to read configuration from.</param>
+        </member>
+        <member name="M:ClassNamerEngine.Configuration.ConfigurationReader.ReadConfiguration">
+            <inheritdoc/>
+        </member>
+        <member name="T:ClassNamerEngine.Configuration.IConfigurationReader">
+            <summary>
+            Interface for custom reading appsettings.josn configuration.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Configuration.IConfigurationReader.ReadConfiguration">
+            <summary>
+            Reads configuration from appsettings.json file.
+            </summary>
+            <returns>Bussiness configuration of the ClassNamer.</returns>
+        </member>
+        <member name="T:ClassNamerEngine.Engine">
+            <summary>
+            Main engine of the app. It contains all the bad, non-injectable stuff.
+            </summary>
+        </member>
+        <member name="P:ClassNamerEngine.Engine.InjectionContainer">
+            <summary>
+            Gets main <see cref="N:SimpleInjector"/> container.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Engine.InitializeContainer">
+            <summary>
+            Initialize <see cref="N:SimpleInjector"/>'s container. Should be executed at the beginning of the application.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Engine.StartHosting">
+            <summary>
+            Start REST service hosting.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Engine.StopHosting">
+            <summary>
+            Stops REST service hosting.
+            </summary>
+        </member>
+        <member name="T:ClassNamerEngine.Puller.Combination">
+            <summary>
+            Template for class name generation.
+            </summary>
+        </member>
+        <member name="P:ClassNamerEngine.Puller.Combination.Parts">
+            <summary>
+            Gets <see cref="T:ClassNamerEngine.Puller.NamePart"/> elements of wihch class name will consist of.
+            </summary>
+        </member>
+        <member name="P:ClassNamerEngine.Puller.Combination.Weight">
+            <summary>
+            Gets number greater or equal to 0 and lesser or equal to 100 that is used to calculate <see cref="T:ClassNamerEngine.Puller.Combination"/> chance of being created.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Puller.Combination.#ctor(ClassNamerEngine.Puller.NamePart[],System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ClassNamerEngine.Puller.Combination"/> class.
+            </summary>
+            <param name="parts"><see cref="T:ClassNamerEngine.Puller.NamePart"/> elements of wihch class name will consist of.</param>
+            <param name="weight">Number greater or equal to 1 and lesser or equal to 100 that is used to calculate <see cref="T:ClassNamerEngine.Puller.Combination"/> chance of being created.</param>
+        </member>
+        <member name="T:ClassNamerEngine.Puller.IRandomNamePuller">
+            <summary>
+            Interface for random name generator.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Puller.IRandomNamePuller.GetRandomClassName">
+            <summary>
+            Generate random class name.
+            </summary>
+            <returns>Randomly generated name consisting of 1 to 4 parts.</returns>
+        </member>
+        <member name="T:ClassNamerEngine.Puller.NamePart">
+            <summary>
+            Name parts that random class name will consist of.
+            </summary>
+        </member>
+        <member name="F:ClassNamerEngine.Puller.NamePart.None">
+            <summary>
+            Default null pattern implementation.
+            </summary>
+        </member>
+        <member name="F:ClassNamerEngine.Puller.NamePart.Adjective">
+            <summary>
+            First verb in the name. It can give more meaning to <see cref="F:ClassNamerEngine.Puller.NamePart.Description"/>.
+            </summary>
+            <example>
+            <b>Custom</b>CompleteThreadInvoker
+            </example>
+        </member>
+        <member name="F:ClassNamerEngine.Puller.NamePart.Description">
+            <summary>
+            Description of the <see cref="F:ClassNamerEngine.Puller.NamePart.Subject"/>
+            </summary>
+            <example>
+            Custom<b>Complete</b>ThreadInvoker
+            </example>
+        </member>
+        <member name="F:ClassNamerEngine.Puller.NamePart.Subject">
+            <summary>
+            Main subject of the class name
+            </summary>
+            <example>
+            CustomComplete<b>Thread</b>Invoker
+            </example>
+        </member>
+        <member name="F:ClassNamerEngine.Puller.NamePart.Role">
+            <summary>
+            Role or main action of the <see cref="F:ClassNamerEngine.Puller.NamePart.Subject"/>
+            </summary>
+            <example>
+            CustomCompleteThread<b>Invoker</b>
+            </example>
+        </member>
+        <member name="T:ClassNamerEngine.Puller.RandomNamePuller">
+            <summary>
+            Default implementation of <see cref="T:ClassNamerEngine.Puller.IRandomNamePuller"/>.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Puller.RandomNamePuller.#ctor(ClassNamerEngine.Configuration.IConfigurationReader)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ClassNamerEngine.Puller.RandomNamePuller"/> class.
+            </summary>
+            <param name="configurationReader"><see cref="T:ClassNamerEngine.Configuration.IConfigurationReader"/> instance.</param>
+        </member>
+        <member name="M:ClassNamerEngine.Puller.RandomNamePuller.GetRandomClassName">
+            <summary>
+            Generate random class name consisting of 1 to 4 parts. The parts are described in <see cref="T:ClassNamerEngine.Puller.NamePart"/>.
+            </summary>
+            <returns>Randomly generated class name.</returns>
+        </member>
+        <member name="T:ClassNamerEngine.Rest.ClassNamerController">
+            <summary>
+            Default ClassNamer controller.
+            </summary>
+        </member>
+        <member name="F:ClassNamerEngine.Rest.ClassNamerController.ACCEPT">
+            <summary>
+            Accept header name.
+            </summary>
+        </member>
+        <member name="F:ClassNamerEngine.Rest.ClassNamerController.TEXT_HTML">
+            <summary>
+            text/html content type.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Rest.ClassNamerController.#ctor(ClassNamerEngine.Puller.IRandomNamePuller,ClassNamerEngine.Rest.IHtmlBuilder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ClassNamerEngine.Rest.ClassNamerController"/> class.
+            </summary>
+            <param name="randomNamePuller">Random name generator.</param>
+            <param name="htmlBuilder">Html page builder.</param>
+        </member>
+        <member name="M:ClassNamerEngine.Rest.ClassNamerController.Test">
+            <summary>
+            Method used for debugging as well as for health-check actions.
+            </summary>
+            <returns>Always 200.</returns>
+        </member>
+        <member name="M:ClassNamerEngine.Rest.ClassNamerController.GetRandomClassName">
+            <summary>
+            Execute random name generator.
+            </summary>
+            <returns>Randomly generated class name.</returns>
+        </member>
+        <member name="M:ClassNamerEngine.Rest.ClassNamerController.GetRandomClassNameHtml">
+            <summary>
+            Execute random name generator.
+            </summary>
+            <returns>Randomly generated class name.</returns>
+        </member>
+        <member name="T:ClassNamerEngine.Rest.ControllerFactory">
+            <summary>
+            Factory for creating scoped controller with use of <see cref="N:SimpleInjector"/>.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Rest.ControllerFactory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ClassNamerEngine.Rest.ControllerFactory"/> class.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Rest.ControllerFactory.#ctor(SimpleInjector.Container)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ClassNamerEngine.Rest.ControllerFactory"/> class.
+            </summary>
+            <param name="container"><see cref="N:SimpleInjector"/> container.</param>
+        </member>
+        <member name="M:ClassNamerEngine.Rest.ControllerFactory.CreateController(Microsoft.AspNetCore.Mvc.ControllerContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ClassNamerEngine.Rest.ControllerFactory.ReleaseController(Microsoft.AspNetCore.Mvc.ControllerContext,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ClassNamerEngine.Rest.HeaderAttributes.DefaultActionHeaderConstraintAttribute">
+            <summary>
+            Action constraint that checks nothing.
+            </summary>
+        </member>
+        <member name="P:ClassNamerEngine.Rest.HeaderAttributes.DefaultActionHeaderConstraintAttribute.Order">
+            <inheritdoc />
+        </member>
+        <member name="M:ClassNamerEngine.Rest.HeaderAttributes.DefaultActionHeaderConstraintAttribute.Accept(Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:ClassNamerEngine.Rest.HeaderAttributes.HtmlActionHeaderConstraintAttribute">
+            <summary>
+            Action constraint that checks if header has Accept:text/html value.
+            </summary>
+        </member>
+        <member name="P:ClassNamerEngine.Rest.HeaderAttributes.HtmlActionHeaderConstraintAttribute.Order">
+            <inheritdoc />
+        </member>
+        <member name="M:ClassNamerEngine.Rest.HeaderAttributes.HtmlActionHeaderConstraintAttribute.Accept(Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:ClassNamerEngine.Rest.HtmlBuilder">
+            <summary>
+            Default implementation of <see cref="T:ClassNamerEngine.Rest.IHtmlBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Rest.HtmlBuilder.BuildHtml(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ClassNamerEngine.Rest.IClassNamerController">
+            <summary>
+            Default ClassNamer controller interface. Created for the purpose of <see cref="N:SimpleInjector"/>'s usage.
+            </summary>
+        </member>
+        <member name="T:ClassNamerEngine.Rest.IHtmlBuilder">
+            <summary>
+            Builds html page.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Rest.IHtmlBuilder.BuildHtml(System.String)">
+            <summary>
+            Build html page for specific class name.
+            </summary>
+            <param name="className">Class name to display.</param>
+            <returns>Full html page.</returns>
+        </member>
+    </members>
+</doc>
