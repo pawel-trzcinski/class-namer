@@ -1,0 +1,202 @@
+﻿ AbandonedMutexException 	
+
+Wyjątek, który jest generowany, gdy jeden wątek uzyskuje Mutex obiekt, który został porzucony przez inny wątek przez zamknięcie bez jego zwolnienia.
+AsyncLocal<T> 	
+
+Reprezentuje dane otoczenia, które są lokalne dla danego przepływu kontroli asynchronicznej, takie jak Metoda asynchroniczna.
+AutoResetEvent 	
+
+Reprezentuje zdarzenie synchronizacji wątku, które po zasygnalizowaniu resetuje automatycznie po zwolnieniu jednego oczekującego wątku. Klasa ta nie może być dziedziczona.
+Barrier 	
+
+Umożliwia wykonywanie wielu zadań w celu współpracy nad algorytmem równolegle przez wiele faz.
+BarrierPostPhaseException 	
+
+Wyjątek, który jest generowany, gdy akcja po fazie Barrier zakończy się niepowodzeniem.
+CancellationTokenSource 	
+
+Informuje o tym, że powinno być anulowane. CancellationToken
+CompressedStack 	
+
+Zapewnia metody ustawiania i przechwytywania skompresowanego stosu w bieżącym wątku. Klasa ta nie może być dziedziczona.
+CountdownEvent 	
+
+Reprezentuje pierwotną synchronizację, która jest zasygnalizowania, gdy jej licznik osiągnie wartość zero.
+EventWaitHandle 	
+
+Reprezentuje zdarzenie synchronizacji wątku.
+ExecutionContext 	
+
+Zarządza kontekstem wykonywania dla bieżącego wątku. Klasa ta nie może być dziedziczona.
+HostExecutionContext 	
+
+Hermetyzuje i propaguje kontekst wykonywania hosta między wątkami.
+HostExecutionContextManager 	
+
+Oferuje funkcje, które umożliwiają hostowi środowiska uruchomieniowego języka wspólnego uczestnictwo w przepływie lub migracji kontekstu wykonania.
+Interlocked 	
+
+Zapewnia operacje niepodzielne dla zmiennych, które są współużytkowane przez wiele wątków.
+LazyInitializer 	
+
+Dostarcza procedury inicjowania z opóźnieniem.
+LockRecursionException 	
+
+Wyjątek, który jest generowany, gdy cykliczne wprowadzanie do blokady nie jest zgodne z zasadami rekursji dla blokady.
+ManualResetEvent 	
+
+Reprezentuje zdarzenie synchronizacji wątku, które po zasygnalizowaniu należy zresetować ręcznie. Klasa ta nie może być dziedziczona.
+ManualResetEventSlim 	
+
+Reprezentuje zdarzenie synchronizacji wątku, które po zasygnalizowaniu należy zresetować ręcznie. Ta klasa jest lekkim alternatywą ManualResetEventdla.
+Monitor 	
+
+Zapewnia mechanizm, który synchronizuje dostęp do obiektów.
+Mutex 	
+
+Element podstawowy synchronizacji, który może być również używany na potrzeby synchronizacji międzyprocesowej.
+Overlapped 	
+
+Zapewnia zarządzaną reprezentację pokrywającej się struktury systemu Win32, w tym metod transferu informacji z wystąpienia Overlapped do struktury NativeOverlapped.
+PreAllocatedOverlapped 	
+
+Reprezentuje wstępnie przydzieloną stan dla natywnych, nakładających się operacji we/wy.
+ReaderWriterLock 	
+
+Definiuje blokadę obsługującą pojedynczych autorów i wielu czytników.
+ReaderWriterLockSlim 	
+
+Reprezentuje blokadę, która jest używana do zarządzania dostępem do zasobu, co pozwala wielu wątkom na odczyt lub wyłączny dostęp do zapisu.
+RegisteredWaitHandle 	
+
+Reprezentuje uchwyt, który został zarejestrowany podczas wywoływania RegisterWaitForSingleObject(WaitHandle, WaitOrTimerCallback, Object, UInt32, Boolean). Klasa ta nie może być dziedziczona.
+Semaphore 	
+
+Ogranicza liczbę wątków, które mogą jednocześnie uzyskiwać dostęp do zasobu lub puli zasobów.
+SemaphoreFullException 	
+
+Wyjątek, który jest generowany, gdy Release Metoda jest wywoływana w semaforze, którego licznik jest już maksymalny.
+SemaphoreSlim 	
+
+Reprezentuje uproszczoną alternatywę Semaphore , która ogranicza liczbę wątków, które mogą uzyskać dostęp do zasobów lub puli zasobów współbieżnie.
+SynchronizationContext 	
+
+Oferuje podstawowe funkcje propagacji kontekstu synchronizacji w różnych modelach synchronizacji.
+SynchronizationLockException 	
+
+Wyjątek, który jest generowany, gdy metoda wymaga, aby obiekt wywołujący był niezależny od danego monitora, a metoda jest wywoływana przez obiekt wywołujący, który nie należy do tej blokady.
+Thread 	
+
+Tworzy i kontroluje wątek, ustawia jego priorytet i pobiera jego stan.
+ThreadAbortException 	
+
+Wyjątek, który jest generowany w przypadku wywołania Abort(Object) metody. Klasa ta nie może być dziedziczona.
+ThreadExceptionEventArgs 	
+
+Dostarcza dane dla ThreadException zdarzenia.
+ThreadInterruptedException 	
+
+Wyjątek, który jest generowany, gdy Thread zostanie przerwany w stanie oczekiwania.
+ThreadLocal<T> 	
+
+Zapewnia magazynowanie danych w lokalnym wątku.
+ThreadPool 	
+
+Program udostępnia pulę wątków, które mogą służyć do wykonywania zadań, publikowania elementów roboczych, asynchronicznego wejścia/wyjścia procesu, oczekiwania w imieniu innych wątków i przetwarzania czasomierzy.
+ThreadPoolBoundHandle 	
+
+Reprezentuje dojście we/wy, które jest powiązane z pulą wątków systemowych i umożliwia składnikom niskiego poziomu otrzymywanie powiadomień o asynchronicznych operacjach we/wy.
+ThreadStartException 	
+
+Wyjątek, który jest generowany, gdy wystąpi awaria w wątku zarządzanym po rozpoczęciu bazowego wątku systemu operacyjnego, ale zanim wątek jest gotowy do wykonania kodu użytkownika.
+ThreadStateException 	
+
+Wyjątek, który jest generowany, gdy Thread jest w nieprawidłowym ThreadState wywołaniu metody.
+Timeout 	
+
+Zawiera stałe, które określają nieskończony limit czasu. Klasa ta nie może być dziedziczona.
+Timer 	
+
+Zapewnia mechanizm wykonywania metody w wątku puli wątków w określonych odstępach czasu. Klasa ta nie może być dziedziczona.
+Volatile 	
+
+Zawiera metody wykonywania operacji pamięci lotnej.
+WaitHandle 	
+
+Hermetyzuje obiekty specyficzne dla systemu operacyjnego, które oczekują na wyłączny dostęp do udostępnionych zasobów.
+WaitHandleCannotBeOpenedException 	
+
+Wyjątek, który jest generowany, gdy podjęto próbę otwarcia systemowego obiektu mutex, semafora lub dojścia oczekiwania na zdarzenie, które nie istnieje.
+WaitHandleExtensions 	
+
+Oferuje wygodne metody umożliwiające pracę z bezpiecznym dojściem do dojścia oczekiwania.
+Struktury
+AsyncFlowControl 	
+
+Oferuje funkcje przywracania migracji lub przepływu kontekstu wykonywania między wątkami.
+AsyncLocalValueChangedArgs<T> 	
+
+Klasa, która dostarcza informacje o zmianach AsyncLocal<T> danych na wystąpienia zarejestrowane w celu powiadomienia o zmianach.
+CancellationToken 	
+
+Propaguje powiadomienie, że operacje powinny być anulowane.
+CancellationTokenRegistration 	
+
+Reprezentuje delegata wywołania zwrotnego, który został zarejestrowany przy użyciu CancellationToken.
+LockCookie 	
+
+Definiuje blokadę implementującą semantykę pojedynczego składnika zapisywania/wielu czytników. Jest to typ wartości.
+NativeOverlapped 	
+
+Zapewnia jawny układ, który jest widoczny w kodzie niezarządzanym i ma taki sam układ jak w przypadku platformy Win32 z dodatkowymi polami zarezerwowanymi na końcu.
+SpinLock 	
+
+Zapewnia wzajemne wykluczenie blokady pierwotnej, gdzie wątek próbujący uzyskać blokadę czeka w pętli wielokrotnie, dopóki blokada nie zostanie udostępniona.
+SpinWait 	
+
+Zapewnia obsługę czekania na wirowanie.
+Wyliczenia
+ApartmentState 	
+
+Określa stan apartamentu elementu Thread.
+EventResetMode 	
+
+Wskazuje, czy EventWaitHandle element jest resetowany automatycznie, czy ręcznie po odebraniu sygnału.
+LazyThreadSafetyMode 	
+
+Określa, Lazy<T> jak wystąpienie synchronizuje dostęp między wieloma wątkami.
+LockRecursionPolicy 	
+
+Określa, czy blokadę można wprowadzać wiele razy przez ten sam wątek.
+ThreadPriority 	
+
+Określa priorytet Threadplanowania.
+ThreadState 	
+
+Określa Stany wykonywania elementu Thread.
+Delegaci
+ContextCallback 	
+
+Reprezentuje metodę, która ma zostać wywołana w nowym kontekście.
+IOCompletionCallback 	
+
+Odbiera kod błędu, liczbę bajtów i nakładający się typ wartości po zakończeniu operacji we/wy w puli wątków.
+ParameterizedThreadStart 	
+
+Reprezentuje metodę, która jest Threadwykonywana w.
+SendOrPostCallback 	
+
+Reprezentuje metodę, która ma być wywoływana, gdy wiadomość zostanie wysłana do kontekstu synchronizacji.
+ThreadExceptionEventHandler 	
+
+Reprezentuje metodę, która będzie obsługiwać ThreadException zdarzenie. Application
+ThreadStart 	
+
+Reprezentuje metodę, która jest Threadwykonywana w.
+TimerCallback 	
+
+Reprezentuje metodę, która obsługuje wywołania z Timer.
+WaitCallback 	
+
+Reprezentuje metodę wywołania zwrotnego, która ma zostać wykonana przez wątek puli wątków.
+WaitOrTimerCallback 

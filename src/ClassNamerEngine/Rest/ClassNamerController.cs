@@ -1,5 +1,6 @@
 ﻿using ClassNamerEngine.Puller;
 using ClassNamerEngine.Rest.HeaderAttributes;
+using log4net;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClassNamerEngine.Rest
@@ -18,6 +19,8 @@ namespace ClassNamerEngine.Rest
         /// text/html content type.
         /// </summary>
         public const string TEXT_HTML = "text/html";
+
+        private static readonly ILog log = LogManager.GetLogger(typeof(ClassNamerController));
 
         private readonly IRandomNamePuller randomNamePuller;
         private readonly IHtmlBuilder htmlBuilder;
@@ -51,7 +54,9 @@ namespace ClassNamerEngine.Rest
         [DefaultActionHeaderConstraint]
         public string GetRandomClassName()
         {
-            return this.randomNamePuller.GetRandomClassName();
+            string randomClassName = this.randomNamePuller.GetRandomClassName();
+            log.Info($"Returning plain text name: {randomClassName}");
+            return randomClassName;
         }
 
         /// <summary>

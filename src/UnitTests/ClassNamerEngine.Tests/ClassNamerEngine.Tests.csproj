@@ -16,10 +16,26 @@
     <None Remove="appsettings.CombinationTest6.json" />
     <None Remove="appsettings.CombinationTest7.json" />
     <None Remove="appsettings.CombinationTest8.json" />
+    <None Remove="appsettings.DuplicateConsecutivesTest1.json" />
+    <None Remove="appsettings.DuplicateConsecutivesTest2.json" />
+    <None Remove="appsettings.DuplicateConsecutivesTest3.json" />
+    <None Remove="appsettings.DuplicateConsecutivesTest4.json" />
     <None Remove="appsettings.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="appsettings.DuplicateConsecutivesTest4.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="appsettings.DuplicateConsecutivesTest2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="appsettings.DuplicateConsecutivesTest3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="appsettings.DuplicateConsecutivesTest1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="appsettings.CombinationTest2.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -100,5 +100,14 @@ namespace ClassNamerEngine.Tests.Puller
         {
             Assert.AreEqual(expectedClassName, new RandomNamePuller(new TestConfigurationReader(configurationFile)).GetRandomClassName());
         }
-    }
+
+        [TestCase("./appsettings.DuplicateConsecutivesTest1.json", "ThreadWordoneWordtwo")]
+        [TestCase("./appsettings.DuplicateConsecutivesTest2.json", "WordoneDogWordtwo")]
+        [TestCase("./appsettings.DuplicateConsecutivesTest3.json", "WordoneWordtwoBug")]
+        [TestCase("./appsettings.DuplicateConsecutivesTest4.json", "WordBugWordBug")]
+        public void DuplicateConsecutivesRemoved(string configurationFile, string expectedClassName)
+        {
+            Assert.AreEqual(expectedClassName, new RandomNamePuller(new TestConfigurationReader(configurationFile)).GetRandomClassName());
+        }
+}
 }

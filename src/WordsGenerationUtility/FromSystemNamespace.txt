@@ -1,0 +1,823 @@
+﻿ AccessViolationException 
+
+Wyjątek, który jest zgłaszany, gdy istnieje podjęto próbę odczytu lub zapisu chronione pamięci.
+ActivationContext 
+
+Identyfikuje kontekst aktywacji dla bieżącej aplikacji. Klasa ta nie może być dziedziczona.
+Activator 
+
+Zawiera metody do lokalnego lub zdalnego tworzenia typów obiektów lub uzyskiwania odwołań do istniejących obiektów zdalnych. Klasa ta nie może być dziedziczona.
+AggregateException 
+
+Reprezentuje co najmniej jeden błąd występujący podczas wykonywania aplikacji.
+AppContext 
+
+Zapewnia członków do ustawiania i pobierania danych dotyczących kontekstu aplikacji.
+AppDomain 
+
+Reprezentuje domenę aplikacji, czyli środowisko izolowane, w którym są wykonywane aplikacje. Klasa ta nie może być dziedziczona.
+AppDomainManager 
+
+Zapewnia zarządzany odpowiednik niezarządzanego hosta.
+AppDomainSetup 
+
+Reprezentuje informacje o powiązaniu zestawu, które można dodać do wystąpienia AppDomain.
+AppDomainUnloadedException 
+
+Wyjątek, który jest zgłaszany, gdy podejmowana jest próba uzyskania dostępu niezaładowanej domenie aplikacji.
+ApplicationException 
+
+Służy jako klasa bazowa dla wyjątków zdefiniowanych przez aplikację.
+ApplicationId 
+
+Zawiera informacje służące do jednoznacznego identyfikowania aplikacji opartej na manifeście. Klasa ta nie może być dziedziczona.
+ApplicationIdentity 
+
+Zapewnia możliwość jednoznacznego identyfikowania aplikacji aktywowanej przez manifest. Klasa ta nie może być dziedziczona.
+ArgumentException 
+
+Wyjątek, który jest generowany, gdy jeden z argumentów dostarczonych do metody jest nieprawidłowy.
+ArgumentNullException 
+
+Wyjątek, który jest generowany, gdy odwołanie o wartościNothing null (w Visual Basic) jest przesyłane do metody, która nie akceptuje jej jako prawidłowego argumentu.
+ArgumentOutOfRangeException 
+
+Wyjątek, który jest zgłaszany, gdy wartość argumentu jest spoza zakresu dopuszczalnych wartości zgodnie z definicją wywoływanej metody.
+ArithmeticException 
+
+Wyjątek, który jest generowany w przypadku błędów w operacji arytmetycznej, rzutowania lub konwersji.
+Array 
+
+Zapewnia metody tworzenia, manipulowania, wyszukiwania i sortowania tablic, a tym samym służy jako klasa bazowa dla wszystkich tablic w środowisku uruchomieniowym języka wspólnego.
+ArrayTypeMismatchException 
+
+Wyjątek, który jest generowany, gdy podejmowana jest próba przechowywania elementu niewłaściwego typu w tablicy.
+AssemblyLoadEventArgs 
+
+Dostarcza dane dla AssemblyLoad zdarzenia.
+Attribute 
+
+Reprezentuje klasę bazową dla atrybutów niestandardowych.
+AttributeUsageAttribute 
+
+Określa użycie innej klasy atrybutu. Klasa ta nie może być dziedziczona.
+BadImageFormatException 
+
+Wyjątek, który jest generowany, gdy obraz pliku biblioteki dołączanej dynamicznie (DLL) lub program wykonywalny jest nieprawidłowy.
+BitConverter 
+
+Konwertuje podstawowe typy danych na tablicę bajtów i tablicę bajtów z podstawowymi typami danych.
+Buffer 
+
+Manipulowanie tablicami typów pierwotnych.
+CannotUnloadAppDomainException 
+
+Wyjątek, który jest generowany, gdy próba zwolnienia domeny aplikacji zakończy się niepowodzeniem.
+CharEnumerator 
+
+Obsługuje iterację String obiektu i odczytywanie jego poszczególnych znaków. Klasa ta nie może być dziedziczona.
+CLSCompliantAttribute 
+
+Wskazuje, czy element programu jest zgodny z Common Language Specification (CLS). Klasa ta nie może być dziedziczona.
+Console 
+
+Reprezentuje standardowe strumienie danych wejściowych, wyjściowych i błędów dla aplikacji konsolowych. Klasa ta nie może być dziedziczona.
+ConsoleCancelEventArgs 
+
+Dostarcza dane dla CancelKeyPress zdarzenia. Klasa ta nie może być dziedziczona.
+ContextBoundObject 
+
+Definiuje klasę bazową dla wszystkich klas powiązanych z kontekstem.
+ContextMarshalException 
+
+Wyjątek, który jest generowany, gdy próba zorganizowania obiektu w ramach granicy kontekstu nie powiedzie się.
+ContextStaticAttribute 
+
+Wskazuje, że wartość pola statycznego jest unikatowa dla danego kontekstu.
+Convert 
+
+Konwertuje podstawowy typ danych na inny podstawowy typ danych.
+DataMisalignedException 
+
+Wyjątek, który jest generowany, gdy jednostka danych jest odczytywana lub zapisywana na adres, który nie jest wielokrotnością rozmiaru danych. Klasa ta nie może być dziedziczona.
+DBNull 
+
+Reprezentuje nieistniejącą wartość. Klasa ta nie może być dziedziczona.
+Delegate 
+
+Reprezentuje delegata, który jest strukturą danych, która odwołuje się do metody statycznej lub do wystąpienia klasy i metody wystąpienia tej klasy.
+DivideByZeroException 
+
+Wyjątek, który jest generowany, gdy jest podejmowana próba podzielenia Decimal wartości całkowitej przez zero.
+DllNotFoundException 
+
+Wyjątek, który jest generowany, gdy nie można odnaleźć biblioteki DLL określonej w imporcie biblioteki DLL.
+DuplicateWaitObjectException 
+
+Wyjątek, który jest generowany, gdy obiekt pojawia się więcej niż jeden raz w tablicy obiektów synchronizacji.
+EntryPointNotFoundException 
+
+Wyjątek, który jest generowany, gdy próba załadowania klasy kończy się niepowodzeniem z powodu braku metody wejścia.
+Enum 
+
+Dostarcza klasę bazową dla wyliczeń.
+Environment 
+
+Zawiera informacje o tym, jak i sposobach manipulowania bieżącym środowiskiem i platformą. Klasa ta nie może być dziedziczona.
+EventArgs 
+
+Reprezentuje klasę bazową dla klas, które zawierają dane zdarzenia i dostarcza wartość do użycia dla zdarzeń, które nie zawierają danych zdarzenia.
+Exception 
+
+Reprezentuje błędy występujące podczas wykonywania aplikacji.
+ExecutionEngineException 
+
+Wyjątek, który jest zgłaszany w przypadku błędu wewnętrznego aparatu wykonywania środowiska uruchomieniowego języka wspólnego. Klasa ta nie może być dziedziczona.
+FieldAccessException 
+
+Wyjątek, który jest generowany, gdy istnieje nieprawidłowa próba uzyskania dostępu do pola prywatnego lub chronionego wewnątrz klasy.
+FileStyleUriParser 
+
+Dostosowywalny parser oparty na schemacie plików.
+FlagsAttribute 
+
+Wskazuje, że Wyliczenie może być traktowane jako pole bitowe; oznacza to zestaw flag.
+FormatException 
+
+Wyjątek, który jest generowany, gdy Format argumentu jest nieprawidłowy lub jeśli ciąg formatu złożonego nie jest poprawnie sformułowany.
+FormattableString 
+
+Reprezentuje ciąg formatu złożonego wraz z argumentami, które mają być sformatowane.
+FtpStyleUriParser 
+
+Dostosowywalny parser oparty na schemacie protokół transferu plików (FTP).
+GC 
+
+Kontroluje systemową Moduł wyrzucania elementów bezużytecznych, usługi, która automatycznie odzyskuje nieużywaną pamięć.
+GenericUriParser 
+
+Dostosowywalny parser dla hierarchicznego identyfikatora URI.
+GopherStyleUriParser 
+
+Dostosowywalny parser oparty na schemacie gopher.
+HttpStyleUriParser 
+
+Dostosowywalny parser oparty na schemacie protokołu HTTP.
+IndexOutOfRangeException 
+
+Wyjątek, który jest generowany, gdy zostanie podjęta próba uzyskania dostępu do elementu tablicy lub kolekcji z indeksem, który znajduje się poza granicami.
+InsufficientExecutionStackException 
+
+Wyjątek, który jest generowany, gdy jest dostępny niewystarczający stos wykonywania, aby umożliwić wykonanie większości metod.
+InsufficientMemoryException 
+
+Wyjątek, który jest generowany, gdy sprawdzenie dostępności wystarczającej ilości pamięci nie powiedzie się. Klasa ta nie może być dziedziczona.
+InvalidCastException 
+
+Wyjątek, który jest generowany dla nieprawidłowego rzutowania lub konwersji jawnej.
+InvalidOperationException 
+
+Wyjątek, który jest generowany, gdy wywołanie metody jest nieprawidłowe dla bieżącego stanu obiektu.
+InvalidProgramException 
+
+Wyjątek, który jest generowany, gdy program zawiera nieprawidłowe instrukcje języka pośredniego (MSIL) firmy Microsoft lub metadanych. Zwykle oznacza to usterkę w kompilatorze, która wygenerowała program.
+InvalidTimeZoneException 
+
+Wyjątek, który jest generowany, gdy informacje o strefie czasowej są nieprawidłowe.
+Lazy<T> 
+
+Zapewnia obsługę inicjowania z opóźnieniem.
+Lazy<T,TMetadata> 
+
+Dostarcza pośredniego odwołania do obiektu i jego skojarzonych metadanych do użycia przez Managed Extensibility Framework.
+LdapStyleUriParser 
+
+Dostosowywalny parser oparty na schemacie protokołu LDAP (Lightweight Directory Access Protocol).
+LoaderOptimizationAttribute 
+
+Służy do ustawiania domyślnych zasad optymalizacji modułu ładującego dla głównej metody aplikacji wykonywalnej.
+LocalDataStoreSlot 
+
+Hermetyzuje miejsce pamięci do przechowywania danych lokalnych. Klasa ta nie może być dziedziczona.
+MarshalByRefObject 
+
+Umożliwia dostęp do obiektów między granicami domeny aplikacji w aplikacjach, które obsługują komunikację zdalną.
+Math 
+
+Zapewnia stałe i statyczne metody dla kątów, logarytmu i innych typowych funkcji matematycznych.
+MemberAccessException 
+
+Wyjątek, który jest generowany, gdy próba uzyskania dostępu do elementu członkowskiego klasy kończy się niepowodzeniem.
+MethodAccessException 
+
+Wyjątek, który jest generowany, gdy istnieje nieprawidłowa próba uzyskania dostępu do metody, takiej jak uzyskanie dostępu do prywatnej metody z częściowo zaufanego kodu.
+MissingFieldException 
+
+Wyjątek, który jest generowany, gdy istnieje próba dynamicznego dostępu do pola, które nie istnieje. Jeśli pole w bibliotece klas zostało usunięte lub zmieniono jego nazwę, Skompiluj ponownie wszystkie zestawy, które odwołują się do tej biblioteki.
+MissingMemberException 
+
+Wyjątek, który jest generowany, gdy istnieje próba dynamicznego dostępu do elementu członkowskiego klasy, który nie istnieje lub który nie został zadeklarowany jako publiczny. Jeśli element członkowski w bibliotece klas został usunięty lub zmieniono jego nazwę, Skompiluj ponownie wszystkie zestawy, które odwołują się do tej biblioteki.
+MissingMethodException 
+
+Wyjątek, który jest generowany, gdy próbuje się dynamicznie uzyskać dostęp do metody, która nie istnieje.
+MTAThreadAttribute 
+
+Wskazuje, że model wątkowości COM dla aplikacji jest apartamentem wielowątkowym (MTA).
+MulticastDelegate 
+
+Reprezentuje delegata multiemisji; oznacza to, że delegat, który może mieć więcej niż jeden element na liście wywołań.
+MulticastNotSupportedException 
+
+Wyjątek, który jest generowany, gdy istnieje próba połączenia dwóch delegatów opartych na typie Delegate , a nie na MulticastDelegate typie. Klasa ta nie może być dziedziczona.
+NetPipeStyleUriParser 
+
+Analizator oparty na schemacie sieci potoku dla systemu "Indigo".
+NetTcpStyleUriParser 
+
+Analizator oparty na schemacie NetTcp dla systemu "Indigo".
+NewsStyleUriParser 
+
+Dostosowywalny parser oparty na schemacie Aktualności przy użyciu protokołu NNTP (Network News Transfer Protocol).
+NonSerializedAttribute 
+
+Wskazuje, że pole klasy możliwej do serializacji nie powinno być serializowane. Klasa ta nie może być dziedziczona.
+NotFiniteNumberException 
+
+Wyjątek, który jest generowany, gdy wartość zmiennoprzecinkowa jest dodatnia nieskończona, ujemna nieskończoność lub nie-liczba (NaN).
+NotImplementedException 
+
+Wyjątek, który jest zgłaszany, gdy żądana metoda lub operacja nie jest zaimplementowana.
+NotSupportedException 
+
+Wyjątek, który jest generowany, gdy wywołana metoda nie jest obsługiwana lub gdy jest podejmowana próba odczytu, wyszukiwania lub zapisu do strumienia, który nie obsługuje wywołanej funkcji.
+Nullable 
+
+Obsługuje typ wartości, który można przypisać null. Klasa ta nie może być dziedziczona.
+NullReferenceException 
+
+Wyjątek, który jest generowany, gdy istnieje próba odwołująca się do odwołania do obiektu o wartości null.
+Object 
+
+Obsługuje wszystkie klasy w hierarchii klas .NET i udostępnia usługi niskiego poziomu klasom pochodnym. Jest to klasa podstawowa klasy podstawowej wszystkich klas platformy .NET; jest to katalog główny hierarchii typów.
+ObjectDisposedException 
+
+Wyjątek, który jest generowany, gdy operacja jest wykonywana na usuniętym obiekcie.
+ObsoleteAttribute 
+
+Oznacza elementy programu, które nie są już używane. Klasa ta nie może być dziedziczona.
+OperatingSystem 
+
+Reprezentuje informacje o systemie operacyjnym, takie jak wersja i identyfikator platformy. Klasa ta nie może być dziedziczona.
+OperationCanceledException 
+
+Wyjątek, który jest generowany w wątku po anulowaniu operacji wykonywanej przez wątek.
+OutOfMemoryException 
+
+Wyjątek, który jest generowany, gdy nie ma wystarczającej ilości pamięci, aby kontynuować wykonywanie programu.
+OverflowException 
+
+Wyjątek, który jest generowany, gdy operacja arytmetyczna, rzutowania lub konwersji w zaznaczonym kontekście powoduje przepełnienie.
+ParamArrayAttribute 
+
+Wskazuje, że metoda będzie zezwalać na zmienną liczbę argumentów w wywołaniu. Klasa ta nie może być dziedziczona.
+PlatformNotSupportedException 
+
+Wyjątek, który jest generowany, gdy funkcja nie jest uruchomiona na określonej platformie.
+Progress<T> 
+
+IProgress<T> Zapewnia, że wywołuje wywołania zwrotne dla każdej raportowanej wartości postępu.
+Random 
+
+Reprezentuje generator liczb losowych, który jest urządzeniem, które tworzy sekwencję liczb, które spełniają pewne wymagania statystyczne losowości.
+RankException 
+
+Wyjątek, który jest generowany, gdy tablica o niewłaściwej liczbie wymiarów jest przenoszona do metody.
+ResolveEventArgs 
+
+Zapewnia dane dla zdarzeń rozpoznawania modułu ładującego, takich TypeResolvejak ResourceResolvezdarzenia ReflectionOnlyAssemblyResolve,, AssemblyResolve i.
+SerializableAttribute 
+
+Wskazuje, że Klasa może być serializowana. Klasa ta nie może być dziedziczona.
+StackOverflowException 
+
+Wyjątek, który jest generowany w przypadku przepełnienia stosu wykonywania, ponieważ zawiera zbyt wiele wywołań metod zagnieżdżonych. Klasa ta nie może być dziedziczona.
+STAThreadAttribute 
+
+Wskazuje, że model wątkowości COM dla aplikacji jest apartamentem jednowątkowym (STA).
+String 
+
+Reprezentuje tekst jako sekwencję jednostek kodu UTF-16.
+StringComparer 
+
+Reprezentuje operację porównywania ciągów, która używa określonych reguł porównywania wielkości liter i kulturowej lub porządkowej.
+StringNormalizationExtensions 
+
+Zapewnia metody rozszerzające do pracy z normalizacją ciągu.
+SystemException 
+
+Służy jako klasa bazowa dla przestrzeni nazw wyjątków systemowych.
+ThreadStaticAttribute 
+
+Wskazuje, że wartość pola statycznego jest unikatowa dla każdego wątku.
+TimeoutException 
+
+Wyjątek, który jest generowany, gdy czas przydzielony na proces lub operację wygasł.
+TimeZone 
+
+Reprezentuje strefę czasową.
+TimeZoneInfo 
+
+Reprezentuje strefę czasową na świecie.
+TimeZoneInfo.AdjustmentRule 
+
+Zawiera informacje o dostosowaniu strefy czasowej, na przykład o przejściu do i od czasu letniego.
+TimeZoneNotFoundException 
+
+Wyjątek, który jest generowany, gdy nie można znaleźć strefy czasowej.
+Tuple 
+
+Zapewnia statyczne metody tworzenia obiektów krotki.
+Tuple<T1> 
+
+Reprezentuje kolekcję 1-lub pojedynczą.
+Tuple<T1,T2> 
+
+Reprezentuje 2-krotkę lub parę.
+Tuple<T1,T2,T3> 
+
+Reprezentuje 3-krotkę lub trzykrotnie.
+Tuple<T1,T2,T3,T4> 
+
+Reprezentuje 4-krotkę lub czterokrotnie.
+Tuple<T1,T2,T3,T4,T5> 
+
+Reprezentuje 5-krotkę lub Quintuple.
+Tuple<T1,T2,T3,T4,T5,T6> 
+
+Reprezentuje 6-krotkę lub sextuple.
+Tuple<T1,T2,T3,T4,T5,T6,T7> 
+
+Reprezentuje 7-krotkę lub septuple.
+Tuple<T1,T2,T3,T4,T5,T6,T7,TRest> 
+
+Reprezentuje krotkę n, gdzie n jest 8 lub większa.
+TupleExtensions 
+
+Zapewnia metody rozszerzające spójność z obsługą języków dla spójnych kolekcji w C#programie.
+Type 
+
+Reprezentuje deklaracje typu: typy klas, typy interfejsów, typy tablic, typy wartości, typy wyliczeniowe, parametry typu, definicje typów ogólnych i otwarte lub zamknięte skonstruowane typy ogólne.
+TypeAccessException 
+
+Wyjątek, który jest generowany, gdy metoda próbuje użyć typu, do którego nie ma dostępu.
+TypeInitializationException 
+
+Wyjątek, który jest generowany jako otoka wokół wyjątku zgłoszonego przez inicjatora klasy. Klasa ta nie może być dziedziczona.
+TypeLoadException 
+
+Wyjątek, który jest generowany, gdy wystąpią błędy ładowania typu.
+TypeUnloadedException 
+
+Wyjątek, który jest generowany, gdy jest podejmowana próba uzyskania dostępu do niezaładowanej klasy.
+UnauthorizedAccessException 
+
+Wyjątek, który jest generowany, gdy system operacyjny nie zezwala na dostęp ze względu na błąd we/wy lub określony błąd zabezpieczeń.
+UnhandledExceptionEventArgs 
+
+Dostarcza dane dla zdarzenia, które jest zgłaszane, gdy występuje wyjątek, który nie jest obsługiwany w żadnej domenie aplikacji.
+Uri 
+
+Umożliwia reprezentowanie obiektów za pomocą jednolitych identyfikatorów zasobów (URI) oraz łatwy dostęp do elementów identyfikatorów URI.
+UriBuilder 
+
+Zapewnia niestandardowy Konstruktor dla jednolitych identyfikatorów zasobów (URI) i modyfikuje identyfikatory URI Uri dla klasy.
+UriFormatException 
+
+Wyjątek, który jest generowany, gdy zostanie wykryty nieprawidłowy Uniform Resource Identifier (URI).
+UriParser 
+
+Analizuje nowy schemat URI. Jest to Klasa abstrakcyjna.
+UriTemplate 
+
+Klasa, która reprezentuje szablon Uniform Resource Identifier (URI).
+UriTemplateEquivalenceComparer 
+
+Klasa służąca do porównywania UriTemplate wystąpień dla równoważności strukturalnej (zamiast odniesienia).
+UriTemplateMatch 
+
+Klasa, która reprezentuje wyniki operacji dopasowania w UriTemplate wystąpieniu.
+UriTemplateMatchException 
+
+Reprezentuje błąd podczas dopasowywania Uri UriTemplateTabledo.
+UriTemplateTable 
+
+Klasa, która reprezentuje zestaw UriTemplate asocjacyjny obiektów.
+UriTypeConverter 
+
+String Konwertuje TypUri na typ i na odwrót.
+ValueType 
+
+Udostępnia klasę bazową dla typów wartości.
+Version 
+
+Reprezentuje numer wersji zestawu, systemu operacyjnego lub środowiska uruchomieniowego języka wspólnego. Klasa ta nie może być dziedziczona.
+WeakReference 
+
+Reprezentuje słabe odwołanie, które odwołuje się do obiektu, a jednocześnie pozwala na odzyskiwanie tego obiektu przez wyrzucanie elementów bezużytecznych.
+WeakReference<T> 
+
+Reprezentuje wpisane słabe odwołanie, które odwołuje się do obiektu, a jednocześnie pozwala na odjęcie tego obiektu przez wyrzucanie elementów bezużytecznych.
+
+ArgIterator 
+
+Reprezentuje listę argumentów o zmiennej długości; oznacza to, że parametry funkcji, która przyjmuje zmienną liczbę argumentów.
+ArraySegment<T> 
+
+Ogranicza sekcję tablicy jednowymiarowej.
+Boolean 
+
+Reprezentuje wartość logiczną (true lub false).
+Byte 
+
+Reprezentuje 8-bitową liczbę całkowitą bez znaku.
+Char 
+
+Reprezentuje znak jako jednostkę kodu UTF-16.
+ConsoleKeyInfo 
+
+Opisuje naciśnięty klawisz konsoli, w tym znak reprezentowany przez klucz konsoli i stan klawiszy modyfikujących SHIFT, ALT i CTRL.
+DateTime 
+
+Reprezentuje chwilę w czasie, zwykle wyrażoną jako datę i godzinę dnia.
+DateTimeOffset 
+
+Reprezentuje punkt w czasie, zwykle wyrażony jako dzień i godzinę, względem uniwersalnego czasu koordynowanego (UTC).
+Decimal 
+
+Reprezentuje dziesiętną liczbę zmiennoprzecinkową.
+Double 
+
+Reprezentuje liczbę zmiennoprzecinkową o podwójnej precyzji.
+Guid 
+
+Reprezentuje unikatowy identyfikator globalny (GUID).
+Int16 
+
+Reprezentuje 16-bitową liczbę całkowitą ze znakiem.
+Int32 
+
+Reprezentuje 32-bitową liczbę całkowitą ze znakiem.
+Int64 
+
+Reprezentuje 64-bitową liczbę całkowitą ze znakiem.
+IntPtr 
+
+Typ specyficzny dla platformy, który jest używany do reprezentowania wskaźnika lub dojścia.
+ModuleHandle 
+
+Reprezentuje dojście środowiska uruchomieniowego dla modułu.
+Nullable<T> 
+
+Reprezentuje typ wartości, który można przypisać null.
+RuntimeArgumentHandle 
+
+Odwołuje się do listy argumentów o zmiennej długości.
+RuntimeFieldHandle 
+
+Reprezentuje pole przy użyciu wewnętrznego tokenu metadanych.
+RuntimeMethodHandle 
+
+RuntimeMethodHandlejest dojściem do wewnętrznej reprezentacji metadanych metody.
+RuntimeTypeHandle 
+
+Reprezentuje typ przy użyciu wewnętrznego tokenu metadanych.
+SByte 
+
+Reprezentuje 8-bitową liczbę całkowitą ze znakiem.
+Single 
+
+Reprezentuje liczbę zmiennoprzecinkową o pojedynczej precyzji.
+TimeSpan 
+
+Reprezentuje interwał czasu.
+TimeZoneInfo.TransitionTime 
+
+Zawiera informacje dotyczące konkretnej zmiany czasu, na przykład zmiany czasu letniego na czas standardowy lub odwrotnie, w określonej strefie czasowej.
+TypedReference 
+
+Opisuje obiekty, które zawierają zarówno zarządzany wskaźnik do lokalizacji, jak i reprezentację typu, który może być przechowywany w tej lokalizacji.
+UInt16 
+
+Reprezentuje 16-bitową liczbę całkowitą bez znaku.
+UInt32 
+
+Reprezentuje 32-bitową liczbę całkowitą bez znaku.
+UInt64 
+
+Reprezentuje 64-bitową liczbę całkowitą bez znaku.
+UIntPtr 
+
+Typ specyficzny dla platformy, który jest używany do reprezentowania wskaźnika lub dojścia.
+ValueTuple 
+
+Zapewnia statyczne metody tworzenia krotek wartości.
+ValueTuple<T1> 
+
+Reprezentuje krotkę wartości z pojedynczym składnikiem.
+ValueTuple<T1,T2> 
+
+Reprezentuje krotkę wartości z 2 składnikami.
+ValueTuple<T1,T2,T3> 
+
+Reprezentuje wartość krotki ze składnikami 3.
+ValueTuple<T1,T2,T3,T4> 
+
+Reprezentuje krotkę wartości z 4 składnikami.
+ValueTuple<T1,T2,T3,T4,T5> 
+
+Reprezentuje krotkę wartości z 5 składnikami.
+ValueTuple<T1,T2,T3,T4,T5,T6> 
+
+Reprezentuje krotkę wartości z 6 składnikami.
+ValueTuple<T1,T2,T3,T4,T5,T6,T7> 
+
+Reprezentuje krotkę wartości z 7 składnikami.
+ValueTuple<T1,T2,T3,T4,T5,T6,T7,TRest> 
+
+Reprezentuje krotkę n-wartościową, gdzie n jest 8 lub większa.
+Void 
+
+Określa typ wartości zwracanej dla metody, która nie zwraca wartości.
+Interfejsy
+_AppDomain 
+
+Ujawnia publiczne elementy członkowskie AppDomain klasy do kodu niezarządzanego.
+IAppDomainSetup 
+
+Reprezentuje informacje o powiązaniu zestawu, które można dodać do wystąpienia AppDomain.
+IAsyncResult 
+
+Reprezentuje stan operacji asynchronicznej.
+ICloneable 
+
+Obsługuje klonowanie, które tworzy nowe wystąpienie klasy o takiej samej wartości jak istniejące wystąpienie.
+IComparable 
+
+Definiuje uogólnioną metodę porównywania typu, która jest implementowana przez typ wartości lub klasy w celu porządkowania lub sortowania wystąpień.
+IComparable<T> 
+
+Definiuje uogólnioną metodę porównania, która jest implementowana przez typ wartości lub klasy w celu utworzenia metody porównywania specyficznego dla typu w celu porządkowania lub sortowania jej wystąpień.
+IConvertible 
+
+Definiuje metody, które konwertują wartość implementującą odwołanie lub typ wartości na typ środowiska uruchomieniowego języka wspólnego o równoważnej wartości.
+ICustomFormatter 
+
+Definiuje metodę, która obsługuje niestandardowe formatowanie wartości obiektu.
+IDisposable 
+
+Zapewnia mechanizm zwalniania niezarządzanych zasobów.
+IEquatable<T> 
+
+Definiuje uogólnioną metodę, która jest implementowana przez typ wartości lub klasy w celu utworzenia metody specyficznej dla określonego typu w celu określenia równości wystąpień.
+IFormatProvider 
+
+Zapewnia mechanizm do pobierania obiektu w celu kontrolowania formatowania.
+IFormattable 
+
+Zapewnia funkcjonalność do formatowania wartości obiektu w postaci ciągu.
+IObservable<T> 
+
+Definiuje dostawcę powiadomień wypychanych.
+IObserver<T> 
+
+Zapewnia mechanizm otrzymywania powiadomień opartych na wypychaniu.
+IProgress<T> 
+
+Definiuje dostawcę aktualizacji postępu.
+IServiceProvider 
+
+Definiuje mechanizm pobierania obiektu usługi; oznacza to, że obiekt, który zapewnia obsługę niestandardową dla innych obiektów.
+Wyliczenia
+ActivationContext.ContextForm 
+
+Wskazuje kontekst aplikacji aktywowanej przez manifest.
+AppDomainManagerInitializationOptions 
+
+Określa akcję, którą Menedżer domeny aplikacji niestandardowej przyjmuje podczas inicjowania nowej domeny.
+AttributeTargets 
+
+Określa elementy aplikacji, na których jest prawidłowy, aby zastosować atrybut.
+Base64FormattingOptions 
+
+Określa, czy ToBase64CharArray odpowiednie ToBase64String i metody wstawiają podziały wierszy w danych wyjściowych.
+ConsoleColor 
+
+Określa stałe, które definiują kolor pierwszego planu i tła dla konsoli programu.
+ConsoleKey 
+
+Określa klucze standardowe konsoli programu.
+ConsoleModifiers 
+
+Przedstawia klawisze modyfikujące SHIFT, ALT i CTRL na klawiaturze.
+ConsoleSpecialKey 
+
+Określa kombinacje klawiszy modyfikujących i konsolowych, które mogą przerwać bieżący proces.
+DateTimeKind 
+
+Określa, czy DateTime obiekt reprezentuje czas lokalny, uniwersalny czas koordynowany (UTC) lub nie jest określony jako czas lokalny czy UTC.
+DayOfWeek 
+
+Określa dzień tygodnia.
+Environment.SpecialFolder 
+
+Określa stałe wyliczane używane do pobierania ścieżek katalogów do folderów specjalnych systemu.
+Environment.SpecialFolderOption 
+
+Określa opcje do użycia podczas pobierania ścieżki do folderu specjalnego.
+EnvironmentVariableTarget 
+
+Określa lokalizację, w której zmienna środowiskowa jest przechowywana lub pobierana w ramach operacji set lub get.
+GCCollectionMode 
+
+Określa zachowanie wymuszonego wyrzucania elementów bezużytecznych.
+GCNotificationStatus 
+
+Zawiera informacje o bieżącej rejestracji dla powiadomienia o następnym pełnym wyrzucaniu elementów bezużytecznych.
+GenericUriParserOptions 
+
+Określa opcje dla elementu UriParser.
+LoaderOptimization 
+
+Wyliczenie używane z klasą LoaderOptimizationAttribute do określania optymalizacji modułu ładującego dla pliku wykonywalnego.
+MidpointRounding 
+
+Określa sposób, w jaki metody zaokrąglania matematycznego powinny przetwarzać liczbę, która jest w połowie między dwiema liczbami.
+PlatformID 
+
+Identyfikuje system operacyjny lub platformę obsługiwaną przez zestaw.
+StringComparison 
+
+Określa kultury, wielkości liter i regułami sortowania, który będzie używany przez niektóre przeciążenia Compare(String, String) i Equals(Object) metody.
+StringSplitOptions 
+
+Określa, czy stosowane przeciążenia metod Split uwzględniają lub pomijają puste podciągi z wartości zwracanej.
+TypeCode 
+
+Określa typ obiektu.
+UriComponents 
+
+Określa części Uri.
+UriFormat 
+
+Kontroluje sposób ucieczki informacji o identyfikatorze URI.
+UriHostNameType 
+
+Definiuje typy nazw hostów dla CheckHostName(String) metody.
+UriIdnScope 
+
+Udostępnia możliwe wartości ustawienia IdnElement konfiguracji System.Configuration w przestrzeni nazw.
+UriKind 
+
+Definiuje różne rodzaje identyfikatorów URI.
+UriPartial 
+
+Definiuje części identyfikatora URI dla GetLeftPart(UriPartial) metody.
+Delegaci
+Action 
+
+Hermetyzuje metodę, która nie ma parametrów i nie zwraca wartości.
+Action<T> 
+
+Hermetyzuje metodę, która ma jeden parametr i nie zwraca wartości.
+Action<T1,T2> 
+
+Hermetyzuje metodę, która ma dwa parametry i nie zwraca wartości.
+Action<T1,T2,T3> 
+
+Hermetyzuje metodę, która ma trzy parametry i nie zwraca wartości.
+Action<T1,T2,T3,T4> 
+
+Hermetyzuje metodę, która ma cztery parametry i nie zwraca wartości.
+Action<T1,T2,T3,T4,T5> 
+
+Hermetyzuje metodę, która ma pięć parametrów i nie zwraca wartości.
+Action<T1,T2,T3,T4,T5,T6> 
+
+Hermetyzuje metodę, która ma sześć parametrów i nie zwraca wartości.
+Action<T1,T2,T3,T4,T5,T6,T7> 
+
+Hermetyzuje metodę, która ma siedem parametrów i nie zwraca wartości.
+Action<T1,T2,T3,T4,T5,T6,T7,T8> 
+
+Hermetyzuje metodę, która ma osiem parametrów i nie zwraca wartości.
+Action<T1,T2,T3,T4,T5,T6,T7,T8,T9> 
+
+Hermetyzuje metodę, która ma dziewięć parametrów i nie zwraca wartości.
+Action<T1,T2,T3,T4,T5,T6,T7,T8,T9,T10> 
+
+Hermetyzuje metodę, która ma 10 parametrów i nie zwraca wartości.
+Action<T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11> 
+
+Hermetyzuje metodę, która ma 11 parametrów i nie zwraca wartości.
+Action<T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12> 
+
+Hermetyzuje metodę, która ma 12 parametrów i nie zwraca wartości.
+Action<T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13> 
+
+Hermetyzuje metodę, która ma 13 parametrów i nie zwraca wartości.
+Action<T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14> 
+
+Hermetyzuje metodę, która ma 14 parametrów i nie zwraca wartości.
+Action<T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15> 
+
+Hermetyzuje metodę, która ma 15 parametrów i nie zwraca wartości.
+Action<T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,T16> 
+
+Hermetyzuje metodę, która ma 16 parametrów i nie zwraca wartości.
+AppDomainInitializer 
+
+Reprezentuje metodę wywołania zwrotnego do wywołania po zainicjowaniu domeny aplikacji.
+AssemblyLoadEventHandler 
+
+Reprezentuje metodę, która obsługuje AssemblyLoad zdarzenie. AppDomain
+AsyncCallback 
+
+Odwołuje się do metody, która ma zostać wywołana w przypadku zakończenia odpowiedniej operacji asynchronicznej.
+Comparison<T> 
+
+Reprezentuje metodę, która porównuje dwa obiekty tego samego typu.
+ConsoleCancelEventHandler 
+
+Reprezentuje metodę, która będzie obsługiwać CancelKeyPress zdarzenie typu. Console
+Converter<TInput,TOutput> 
+
+Reprezentuje metodę, która konwertuje obiekt z jednego typu na inny typ.
+CrossAppDomainDelegate 
+
+Używany przez DoCallBack(CrossAppDomainDelegate) dla wywołań domeny między aplikacjami.
+EventHandler 
+
+Reprezentuje metodę, która będzie obsługiwać zdarzenie, które nie ma danych zdarzenia.
+EventHandler<TEventArgs> 
+
+Reprezentuje metodę, która będzie obsługiwać zdarzenie, gdy zdarzenie zawiera dane.
+Func<TResult> 
+
+Hermetyzuje metodę, która nie ma parametrów i zwraca wartość typu określonego przez TResult parametr.
+Func<T,TResult> 
+
+Hermetyzuje metodę, która ma jeden parametr i zwraca wartość typu określonego przez TResult parametr.
+Func<T1,T2,TResult> 
+
+Hermetyzuje metodę, która ma dwa parametry i zwraca wartość typu określonego przez TResult parametr.
+Func<T1,T2,T3,TResult> 
+
+Hermetyzuje metodę, która ma trzy parametry i zwraca wartość typu określonego przez TResult parametr.
+Func<T1,T2,T3,T4,TResult> 
+
+Hermetyzuje metodę, która ma cztery parametry i zwraca wartość typu określonego przez TResult parametr.
+Func<T1,T2,T3,T4,T5,TResult> 
+
+Hermetyzuje metodę, która ma pięć parametrów i zwraca wartość typu określonego przez TResult parametr.
+Func<T1,T2,T3,T4,T5,T6,TResult> 
+
+Hermetyzuje metodę, która ma sześć parametrów i zwraca wartość typu określonego przez TResult parametr.
+Func<T1,T2,T3,T4,T5,T6,T7,TResult> 
+
+Hermetyzuje metodę, która ma siedem parametrów i zwraca wartość typu określonego przez TResult parametr.
+Func<T1,T2,T3,T4,T5,T6,T7,T8,TResult> 
+
+Hermetyzuje metodę, która ma osiem parametrów i zwraca wartość typu określonego przez TResult parametr.
+Func<T1,T2,T3,T4,T5,T6,T7,T8,T9,TResult> 
+
+Hermetyzuje metodę, która ma dziewięć parametrów i zwraca wartość typu określonego przez TResult parametr.
+Func<T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,TResult> 
+
+Hermetyzuje metodę, która ma 10 parametrów i zwraca wartość typu określonego przez TResult parametr.
+Func<T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,TResult> 
+
+Hermetyzuje metodę, która ma 11 parametrów i zwraca wartość typu określonego przez TResult parametr.
+Func<T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,TResult> 
+
+Hermetyzuje metodę, która ma 12 parametrów i zwraca wartość typu określonego przez TResult parametr.
+Func<T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,TResult> 
+
+Hermetyzuje metodę, która ma 13 parametrów i zwraca wartość typu określonego przez TResult parametr.
+Func<T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,TResult> 
+
+Hermetyzuje metodę, która ma 14 parametrów i zwraca wartość typu określonego przez TResult parametr.
+Func<T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,TResult> 
+
+Hermetyzuje metodę, która ma 15 parametrów i zwraca wartość typu określonego przez TResult parametr.
+Func<T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,T16,TResult> 
+
+Hermetyzuje metodę, która ma 16 parametrów i zwraca wartość typu określonego przez TResult parametr.
+Predicate<T> 
+
+Reprezentuje metodę, która definiuje zestaw kryteriów i określa, czy określony obiekt spełnia te kryteria.
+ResolveEventHandler 
+
+Reprezentuje metodę TypeResolve, która obsługuje zdarzenie, ResourceResolve AppDomain, lub AssemblyResolve .
+UnhandledExceptionEventHandler 
+
+Reprezentuje metodę, która będzie obsługiwać zdarzenie wywoływane przez wyjątek, który nie jest obsługiwany przez domenę aplikacji.

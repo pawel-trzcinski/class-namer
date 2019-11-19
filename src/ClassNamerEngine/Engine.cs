@@ -1,6 +1,7 @@
 ﻿using ClassNamerEngine.Configuration;
 using ClassNamerEngine.Puller;
 using ClassNamerEngine.Rest;
+using log4net;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using SimpleInjector;
@@ -12,6 +13,8 @@ namespace ClassNamerEngine
     /// </summary>
     public static class Engine
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(Engine));
+
         private static IWebHost webHost;
 
         /// <summary>
@@ -32,6 +35,7 @@ namespace ClassNamerEngine
 
             InjectionContainer.Register<IClassNamerController, ClassNamerController>(Lifestyle.Scoped);
 
+            log.Debug("Container verification attempt");
             InjectionContainer.Verify();
         }
 
@@ -49,6 +53,7 @@ namespace ClassNamerEngine
         /// </summary>
         public static void StopHosting()
         {
+            log.Info("Hosting stoppingt");
             webHost.StopAsync().Wait();
         }
     }

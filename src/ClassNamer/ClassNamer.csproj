@@ -1,13 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
 
-    <DocumentationFile>D:\Programming\ClassNamer\ClassNamerEngine\ClassNamerEngine.xml</DocumentationFile>
+    <DocumentationFile>D:\Programming\ClassNamer\src\ClassNamer\ClassNamer.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Data\Default.html" />
+    <None Remove="appsettings.json" />
+    <None Remove="log4net.ClassNamer.config" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,24 +21,27 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Data\Default.html">
+    <Content Include="log4net.ClassNamer.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-    <PackageReference Include="SimpleInjector" Version="4.7.1" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClassNamerEngine\ClassNamerEngine.csproj" />
   </ItemGroup>
 
 </Project>

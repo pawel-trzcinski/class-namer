@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using log4net;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -9,8 +10,12 @@ namespace ClassNamerEngine.Rest
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "It's AspNetCore reflection stuff")]
     public class Startup
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(Startup));
+
         public void ConfigureServices(IServiceCollection services)
         {
+            log.Debug("Startup.ConfigureServices");
+
             services.AddMvc();
             services.AddSingleton<IControllerFactory, ControllerFactory>();
             services.AddLogging();
@@ -18,6 +23,8 @@ namespace ClassNamerEngine.Rest
 
         public void Configure(IApplicationBuilder app)
         {
+            log.Debug("Startup.Configure");
+
             app.UseMvc();
         }
     }

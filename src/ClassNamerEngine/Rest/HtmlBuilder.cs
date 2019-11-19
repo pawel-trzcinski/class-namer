@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using log4net;
 
 namespace ClassNamerEngine.Rest
 {
@@ -11,6 +12,8 @@ namespace ClassNamerEngine.Rest
     {
         private const string PLACEHOLDER = "[PLACEHOLDER]";
         private static readonly int placeholderLength = PLACEHOLDER.Length;
+
+        private static readonly ILog log = LogManager.GetLogger(typeof(HtmlBuilder));
 
         private static readonly object lockObject = new object();
         private volatile bool htmlFileRead;
@@ -26,6 +29,8 @@ namespace ClassNamerEngine.Rest
             {
                 throw new ArgumentNullException(nameof(className));
             }
+
+            log.Debug($"Building html for {className}");
 
             Initialize();
 
@@ -49,6 +54,8 @@ namespace ClassNamerEngine.Rest
                 {
                     return;
                 }
+
+                log.Debug("Initializing HtmlBuilder");
 
                 string defaultFileText = File.ReadAllText(Path.Combine(".", "Data", "Default.html"));
 

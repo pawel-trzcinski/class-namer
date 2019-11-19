@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ClassNamerEngine.Configuration;
+using log4net;
 
 namespace ClassNamerEngine.Puller
 {
@@ -43,7 +44,7 @@ namespace ClassNamerEngine.Puller
         {
             Combination combination = pullingArray[this.pullingRandom.Next(pullingRange)];
 
-            string result = String.Empty;
+            List<string> result = new List<string>(combination.Parts.Count);
             foreach (NamePart namePart in combination.Parts)
             {
                 if (!wordsSet.TryGetValue(namePart, out string[] words))
@@ -51,7 +52,24 @@ namespace ClassNamerEngine.Puller
                     throw new InvalidOperationException($"Unable to get words set for NamePart {namePart}");
                 }
 
-                result += words[pullingRandom.Next(words.Length)];
+                result.Add(words[pullingRandom.Next(words.Length)]);
+            }
+
+            return String.Concat(RemoveConsecutiveDuplicates(result));
+        }
+
+        private static List<string> RemoveConsecutiveDuplicates(List<string> pulledWords)
+        {
+            List<string> result = new List<string>(pulledWords.Count);
+
+            foreach (string pulledWord in pulledWords)
+            {
+                if (String.Equals(pulledWord, result.LastOrDefault(), StringComparison.Ordinal))
+                {
+                    continue;
+                }
+
+                result.Add(pulledWord);
             }
 
             return result;

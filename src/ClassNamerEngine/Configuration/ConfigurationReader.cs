@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using log4net;
 using Newtonsoft.Json.Linq;
 
 namespace ClassNamerEngine.Configuration
@@ -9,6 +10,8 @@ namespace ClassNamerEngine.Configuration
     /// </summary>
     public class ConfigurationReader : IConfigurationReader
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(ConfigurationReader));
+
         private static readonly object lockObject = new object();
         private volatile ClassNamerConfiguration classNamerConfiguration;
 
@@ -46,8 +49,12 @@ namespace ClassNamerEngine.Configuration
                     return this.classNamerConfiguration;
                 }
 
+                log.Info($"Reading configuration from {settingsFile}");
+
                 string jsonText = File.ReadAllText(settingsFile);
                 JObject settings = JObject.Parse(jsonText);
+
+                log.Debug($"Configuration from file: {settings.ToString()}");
 
                 this.classNamerConfiguration = settings[nameof(ClassNamerConfiguration)].ToObject<ClassNamerConfiguration>();
             }
