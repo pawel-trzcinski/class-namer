@@ -52,11 +52,12 @@ namespace ClassNamerEngine.Rest
         /// <returns>Randomly generated class name.</returns>
         [HttpGet("RandomClassName")]
         [DefaultActionHeaderConstraint]
-        public string GetRandomClassName()
+        [AddGitHubHeader]
+        public ContentResult GetRandomClassName()
         {
             string randomClassName = this.randomNamePuller.GetRandomClassName();
             log.Info($"Returning plain text name: {randomClassName}");
-            return randomClassName;
+            return Content(randomClassName, "text/plain");
         }
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace ClassNamerEngine.Rest
         /// <returns>Randomly generated class name.</returns>
         [HttpGet("RandomClassName")]
         [HtmlActionHeaderConstraint]
+        [AddGitHubHeader]
         public ContentResult GetRandomClassNameHtml()
         {
             return Content(this.htmlBuilder.BuildHtml(this.randomNamePuller.GetRandomClassName()), TEXT_HTML);

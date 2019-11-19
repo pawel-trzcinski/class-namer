@@ -11,8 +11,6 @@ namespace ClassNamer
         private static readonly ILog log = LogManager.GetLogger(typeof(Program));
 
 #warning TODO - niech Madzia powie jak ten html zrobić, żeby google dobrze złapało
-#warning TODO - wrzucic na github
-#warning TODO - info o mnie na stronce i o repo gitlab
 #warning TODO - kupic ClassNamer.pl albo jakies inne panstwo
 #warning TODO - znalezc hosting darmowy i wieczny
 

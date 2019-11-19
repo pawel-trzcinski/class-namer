@@ -236,6 +236,41 @@
         <member name="M:ClassNamerEngine.Rest.ControllerFactory.ReleaseController(Microsoft.AspNetCore.Mvc.ControllerContext,System.Object)">
             <inheritdoc/>
         </member>
+        <member name="T:ClassNamerEngine.Rest.HeaderAttributes.AddGitHubHeaderAttribute">
+            <summary>
+            Attribute for adding GitHub repo attribute.
+            </summary>
+        </member>
+        <member name="F:ClassNamerEngine.Rest.HeaderAttributes.AddGitHubHeaderAttribute.GIT_HUB">
+            <summary>
+            GitHub header name.
+            </summary>
+        </member>
+        <member name="F:ClassNamerEngine.Rest.HeaderAttributes.AddGitHubHeaderAttribute.GIT_HUB_ADDRESS">
+            <summary>
+            GitHub header value.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Rest.HeaderAttributes.AddGitHubHeaderAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ClassNamerEngine.Rest.HeaderAttributes.AddGitHubHeaderAttribute"/> class.
+            </summary>
+        </member>
+        <member name="T:ClassNamerEngine.Rest.HeaderAttributes.AddHeaderAttribute">
+            <summary>
+            Add any custom header to response.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Rest.HeaderAttributes.AddHeaderAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ClassNamerEngine.Rest.HeaderAttributes.AddHeaderAttribute"/> class.
+            </summary>
+            <param name="name">Header name.</param>
+            <param name="value">Header value.</param>
+        </member>
+        <member name="M:ClassNamerEngine.Rest.HeaderAttributes.AddHeaderAttribute.OnResultExecuting(Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext)">
+            <inheritdoc/>
+        </member>
         <member name="T:ClassNamerEngine.Rest.HeaderAttributes.DefaultActionHeaderConstraintAttribute">
             <summary>
             Action constraint that checks nothing.
