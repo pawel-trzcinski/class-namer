@@ -20,7 +20,14 @@ namespace ClassNamerEngine.Rest
         /// </summary>
         public const string TEXT_HTML = "text/html";
 
+        /// <summary>
+        /// text/plain content type.
+        /// </summary>
+        public const string TEXT_PLAIN = "text/plain";
+
         private static readonly ILog log = LogManager.GetLogger(typeof(ClassNamerController));
+
+        private static readonly string robots_content = System.IO.File.ReadAllText("robots.txt");
 
         private readonly IRandomNamePuller randomNamePuller;
         private readonly IHtmlBuilder htmlBuilder;
@@ -50,26 +57,40 @@ namespace ClassNamerEngine.Rest
         /// Execute random name generator.
         /// </summary>
         /// <returns>Randomly generated class name.</returns>
-        [HttpGet("RandomClassName")]
+        [HttpGet]
+        [Route("")]
+        [Route("RandomClassName")]
         [DefaultActionHeaderConstraint]
         [AddGitHubHeader]
         public ContentResult GetRandomClassName()
         {
             string randomClassName = this.randomNamePuller.GetRandomClassName();
             log.Info($"Returning plain text name: {randomClassName}");
-            return Content(randomClassName, "text/plain");
+            return Content(randomClassName, TEXT_PLAIN);
         }
 
         /// <summary>
         /// Execute random name generator.
         /// </summary>
         /// <returns>Randomly generated class name.</returns>
-        [HttpGet("RandomClassName")]
+        [HttpGet]
+        [Route("")]
+        [Route("RandomClassName")]
         [HtmlActionHeaderConstraint]
         [AddGitHubHeader]
         public ContentResult GetRandomClassNameHtml()
         {
             return Content(this.htmlBuilder.BuildHtml(this.randomNamePuller.GetRandomClassName()), TEXT_HTML);
+        }
+
+        /// <summary>
+        /// Standard robots file.
+        /// </summary>
+        /// <returns>Robots file content.</returns>
+        [HttpGet("robots.txt")]
+        public ContentResult Robots()
+        {
+            return Content(robots_content, TEXT_PLAIN);
         }
     }
 }

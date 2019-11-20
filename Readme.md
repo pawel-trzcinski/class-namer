@@ -11,6 +11,11 @@
 docker build -t class_namer:latest .
 ```
 
-### Mics
+### Running
+```
+docker run -it --rm -p 15400:15400 class_namer:latest
+```
+
+### Misc
 * configuration file:
   - words can duplicate - no propability impact - Distinct used

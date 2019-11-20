@@ -45,9 +45,10 @@ namespace ClassNamerEngine.Tests.Rest
             htmlBuilderMock.Setup(p => p.BuildHtml(randomName)).Callback(() => builderExecuted = true).Returns(randomHtml);
 
             ClassNamerController controller = new ClassNamerController(randomNamePullerMock.Object, htmlBuilderMock.Object);
-            string result = controller.GetRandomClassName();
+            ContentResult result = controller.GetRandomClassName();
 
-            Assert.AreEqual(randomName, result);
+            Assert.AreEqual(randomName, result.Content);
+            Assert.AreEqual(ClassNamerController.TEXT_PLAIN, result.ContentType);
             Assert.IsTrue(pullerExecuted);
             Assert.IsFalse(builderExecuted);
         }
@@ -69,8 +70,27 @@ namespace ClassNamerEngine.Tests.Rest
             ContentResult result = controller.GetRandomClassNameHtml();
 
             Assert.AreEqual(randomHtml, result.Content);
+            Assert.AreEqual(ClassNamerController.TEXT_HTML, result.ContentType);
             Assert.IsTrue(pullerExecuted);
             Assert.IsTrue(builderExecuted);
+        }
+
+        [Test]
+        public void RobotsReturnsText()
+        {
+            string randomName = Guid.NewGuid().ToString();
+            string randomHtml = Guid.NewGuid().ToString();
+
+            Mock<IRandomNamePuller> randomNamePullerMock = new Mock<IRandomNamePuller>();
+            randomNamePullerMock.Setup(p => p.GetRandomClassName()).Returns(randomName);
+            Mock<IHtmlBuilder> htmlBuilderMock = new Mock<IHtmlBuilder>();
+            htmlBuilderMock.Setup(p => p.BuildHtml(randomName)).Returns(randomHtml);
+
+            ClassNamerController controller = new ClassNamerController(randomNamePullerMock.Object, htmlBuilderMock.Object);
+            ContentResult result = controller.Robots();
+
+            Assert.IsFalse(String.IsNullOrWhiteSpace(result.Content));
+            Assert.AreEqual(ClassNamerController.TEXT_PLAIN, result.ContentType);
         }
     }
 }

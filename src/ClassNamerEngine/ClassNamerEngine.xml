@@ -189,6 +189,11 @@
             text/html content type.
             </summary>
         </member>
+        <member name="F:ClassNamerEngine.Rest.ClassNamerController.TEXT_PLAIN">
+            <summary>
+            text/plain content type.
+            </summary>
+        </member>
         <member name="M:ClassNamerEngine.Rest.ClassNamerController.#ctor(ClassNamerEngine.Puller.IRandomNamePuller,ClassNamerEngine.Rest.IHtmlBuilder)">
             <summary>
             Initializes a new instance of the <see cref="T:ClassNamerEngine.Rest.ClassNamerController"/> class.
@@ -213,6 +218,12 @@
             Execute random name generator.
             </summary>
             <returns>Randomly generated class name.</returns>
+        </member>
+        <member name="M:ClassNamerEngine.Rest.ClassNamerController.Robots">
+            <summary>
+            Standard robots file.
+            </summary>
+            <returns>Robots file content.</returns>
         </member>
         <member name="T:ClassNamerEngine.Rest.ControllerFactory">
             <summary>
