@@ -217,7 +217,7 @@
             <summary>
             Execute random name generator.
             </summary>
-            <returns>Randomly generated class name.</returns>
+            <returns>Randomly generated class name embodied in Html.</returns>
         </member>
         <member name="M:ClassNamerEngine.Rest.ClassNamerController.Robots">
             <summary>
@@ -246,6 +246,21 @@
         </member>
         <member name="M:ClassNamerEngine.Rest.ControllerFactory.ReleaseController(Microsoft.AspNetCore.Mvc.ControllerContext,System.Object)">
             <inheritdoc/>
+        </member>
+        <member name="T:ClassNamerEngine.Rest.HeaderAttributes.AddCorsHeaderAttribute">
+            <summary>
+            Attribute for adding CORS header.
+            </summary>
+        </member>
+        <member name="F:ClassNamerEngine.Rest.HeaderAttributes.AddCorsHeaderAttribute.ACCESS_CONTROL_ALLOW_ORIGIN">
+            <summary>
+            Name of CORS header.
+            </summary>
+        </member>
+        <member name="M:ClassNamerEngine.Rest.HeaderAttributes.AddCorsHeaderAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ClassNamerEngine.Rest.HeaderAttributes.AddCorsHeaderAttribute"/> class.
+            </summary>
         </member>
         <member name="T:ClassNamerEngine.Rest.HeaderAttributes.AddGitHubHeaderAttribute">
             <summary>

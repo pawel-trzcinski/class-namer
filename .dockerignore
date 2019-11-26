@@ -2,6 +2,8 @@
 .git
 .vs
 
+class_namer_*.tar
+
 # User-specific files
 *.rsuser
 *.suo

@@ -61,6 +61,7 @@ namespace ClassNamerEngine.Rest
         [Route("")]
         [Route("RandomClassName")]
         [DefaultActionHeaderConstraint]
+        [AddCorsHeader]
         [AddGitHubHeader]
         public ContentResult GetRandomClassName()
         {
@@ -72,11 +73,12 @@ namespace ClassNamerEngine.Rest
         /// <summary>
         /// Execute random name generator.
         /// </summary>
-        /// <returns>Randomly generated class name.</returns>
+        /// <returns>Randomly generated class name embodied in Html.</returns>
         [HttpGet]
         [Route("")]
         [Route("RandomClassName")]
         [HtmlActionHeaderConstraint]
+        [AddCorsHeader]
         [AddGitHubHeader]
         public ContentResult GetRandomClassNameHtml()
         {
