@@ -18,19 +18,19 @@ namespace ClassNamerEngine.Rest
         /// <summary>
         /// text/html content type.
         /// </summary>
-        public const string TEXT_HTML = "text/html";
+        public const string TextHtml = "text/html";
 
         /// <summary>
         /// text/plain content type.
         /// </summary>
-        public const string TEXT_PLAIN = "text/plain";
+        public const string TextPlain = "text/plain";
 
-        private static readonly ILog log = LogManager.GetLogger(typeof(ClassNamerController));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(ClassNamerController));
 
-        private static readonly string robots_content = System.IO.File.ReadAllText("robots.txt");
+        private static readonly string RobotsContent = System.IO.File.ReadAllText("robots.txt");
 
-        private readonly IRandomNamePuller randomNamePuller;
-        private readonly IHtmlBuilder htmlBuilder;
+        private readonly IRandomNamePuller _randomNamePuller;
+        private readonly IHtmlBuilder _htmlBuilder;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassNamerController"/> class.
@@ -39,8 +39,8 @@ namespace ClassNamerEngine.Rest
         /// <param name="htmlBuilder">Html page builder.</param>
         public ClassNamerController(IRandomNamePuller randomNamePuller, IHtmlBuilder htmlBuilder)
         {
-            this.randomNamePuller = randomNamePuller;
-            this.htmlBuilder = htmlBuilder;
+            _randomNamePuller = randomNamePuller;
+            _htmlBuilder = htmlBuilder;
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace ClassNamerEngine.Rest
         [HttpGet("test")]
         public StatusCodeResult Test()
         {
-            return this.Ok();
+            return Ok();
         }
 
         /// <summary>
@@ -63,11 +63,11 @@ namespace ClassNamerEngine.Rest
         [DefaultActionHeaderConstraint]
         [AddCorsHeader]
         [AddGitHubHeader]
-        public ContentResult GetRandomClassName()
+        public ContentResult GetRandomClassName(string required)
         {
-            string randomClassName = this.randomNamePuller.GetRandomClassName();
-            log.Info($"Returning plain text name: {randomClassName}");
-            return Content(randomClassName, TEXT_PLAIN);
+            string randomClassName = _randomNamePuller.GetRandomClassName(required);
+            Log.Info($"Returning plain text name: {randomClassName}");
+            return Content(randomClassName, TextPlain);
         }
 
         /// <summary>
@@ -80,9 +80,9 @@ namespace ClassNamerEngine.Rest
         [HtmlActionHeaderConstraint]
         [AddCorsHeader]
         [AddGitHubHeader]
-        public ContentResult GetRandomClassNameHtml()
+        public ContentResult GetRandomClassNameHtml(string required)
         {
-            return Content(this.htmlBuilder.BuildHtml(this.randomNamePuller.GetRandomClassName()), TEXT_HTML);
+            return Content(_htmlBuilder.BuildHtml(_randomNamePuller.GetRandomClassName(required)), TextHtml);
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace ClassNamerEngine.Rest
         [HttpGet("robots.txt")]
         public ContentResult Robots()
         {
-            return Content(robots_content, TEXT_PLAIN);
+            return Content(RobotsContent, TextPlain);
         }
     }
 }

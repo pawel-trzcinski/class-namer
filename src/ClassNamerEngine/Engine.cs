@@ -13,9 +13,9 @@ namespace ClassNamerEngine
     /// </summary>
     public static class Engine
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(Engine));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(Engine));
 
-        private static IWebHost webHost;
+        private static IWebHost _webHost;
 
         /// <summary>
         /// Gets main <see cref="SimpleInjector"/> container.
@@ -35,7 +35,7 @@ namespace ClassNamerEngine
 
             InjectionContainer.Register<IClassNamerController, ClassNamerController>(Lifestyle.Scoped);
 
-            log.Debug("Container verification attempt");
+            Log.Debug("Container verification attempt");
             InjectionContainer.Verify();
         }
 
@@ -44,8 +44,8 @@ namespace ClassNamerEngine
         /// </summary>
         public static void StartHosting()
         {
-            webHost = WebHost.CreateDefaultBuilder().UseStartup<Startup>().Build();
-            webHost.Run();
+            _webHost = WebHost.CreateDefaultBuilder().UseStartup<Startup>().Build();
+            _webHost.Run();
         }
 
         /// <summary>
@@ -53,8 +53,8 @@ namespace ClassNamerEngine
         /// </summary>
         public static void StopHosting()
         {
-            log.Info("Hosting stoppingt");
-            webHost.StopAsync().Wait();
+            Log.Info("Hosting stopping");
+            _webHost.StopAsync().Wait();
         }
     }
 }

@@ -3,13 +3,15 @@ using ClassNamerEngine.Puller;
 using NUnit.Framework;
 using System;
 using System.Linq;
+using AutoFixture;
+using Moq;
 
 namespace ClassNamerEngine.Tests.Puller
 {
     [TestFixture]
     public class RandomNamePullerTests
     {
-        private static readonly string[] possibleWords = new string[]
+        private static readonly string[] PossibleWords = new string[]
         {
             "Custom",
 
@@ -44,14 +46,15 @@ namespace ClassNamerEngine.Tests.Puller
         }
 
         [Test]
+        [Combinatorial]
         [Repeat(50)]
-        public void CreatesRandomClassName([Range(1, 10)]int singleInstanceExecCount)
+        public void CreatesRandomClassName([Range(1, 10)] int singleInstanceExecCount, [Values(null, "", " ")]string emptyRequired)
         {
             RandomNamePuller puller = new RandomNamePuller(new ConfigurationReader());
 
             for (int i = 0; i < singleInstanceExecCount; i++)
             {
-                TestOneName(puller.GetRandomClassName());
+                TestOneName(puller.GetRandomClassName(emptyRequired));
             }
         }
 
@@ -59,16 +62,16 @@ namespace ClassNamerEngine.Tests.Puller
         {
             Console.WriteLine($"Testing '{name}'");
 
-            Assert.IsNotNull(name);
-            Assert.IsNotEmpty(name);
+            Assert.That(name, Is.Not.Null);
+            Assert.That(name, Is.Not.Empty);
 
             string workingName = name;
             while (!String.IsNullOrEmpty(workingName))
             {
                 bool wordRemoved = false;
-                for (int i = 0; i < possibleWords.Length; i++)
+                for (int i = 0; i < PossibleWords.Length; i++)
                 {
-                    int index = workingName.IndexOf(possibleWords[i]);
+                    int index = workingName.IndexOf(PossibleWords[i]);
 
                     if (index == -1)
                     {
@@ -77,7 +80,7 @@ namespace ClassNamerEngine.Tests.Puller
                     }
 
                     // remove word from name
-                    workingName = workingName.Remove(index, possibleWords[i].Length);
+                    workingName = workingName.Remove(index, PossibleWords[i].Length);
                     wordRemoved = true;
                 }
 
@@ -88,6 +91,22 @@ namespace ClassNamerEngine.Tests.Puller
             }
         }
 
+        [Test]
+        [Repeat(50)]
+        public void RequiredWordIsInserted()
+        {
+            // Arrange
+            var fixture = new Fixture();
+            string required = fixture.Create<string>();
+            var puller = new RandomNamePuller(new ConfigurationReader());
+
+            // Act
+            string name = puller.GetRandomClassName(required);
+            
+            // Assert
+            Assert.That(name, Contains.Substring(required));
+        }
+        
         [TestCase("./appsettings.CombinationTest1.json", "AdjectivexxxDescriptionxxxSubjectxxxRolexxx")]
         [TestCase("./appsettings.CombinationTest2.json", "RolexxxDescriptionxxxSubjectxxxAdjectivexxx")]
         [TestCase("./appsettings.CombinationTest3.json", "Adjectivexxx")]
@@ -98,7 +117,7 @@ namespace ClassNamerEngine.Tests.Puller
         [TestCase("./appsettings.CombinationTest8.json", "DescriptionxxxSubjectxxxRolexxx")]
         public void CombinationsAreCorrect(string configurationFile, string expectedClassName)
         {
-            Assert.AreEqual(expectedClassName, new RandomNamePuller(new TestConfigurationReader(configurationFile)).GetRandomClassName());
+            Assert.That(new RandomNamePuller(new TestConfigurationReader(configurationFile)).GetRandomClassName(null), Is.EqualTo(expectedClassName));
         }
 
         [TestCase("./appsettings.DuplicateConsecutivesTest1.json", "ThreadWordoneWordtwo")]
@@ -107,7 +126,7 @@ namespace ClassNamerEngine.Tests.Puller
         [TestCase("./appsettings.DuplicateConsecutivesTest4.json", "WordBugWordBug")]
         public void DuplicateConsecutivesRemoved(string configurationFile, string expectedClassName)
         {
-            Assert.AreEqual(expectedClassName, new RandomNamePuller(new TestConfigurationReader(configurationFile)).GetRandomClassName());
+            Assert.That(new RandomNamePuller(new TestConfigurationReader(configurationFile)).GetRandomClassName(null), Is.EqualTo(expectedClassName));
         }
-}
+    }
 }

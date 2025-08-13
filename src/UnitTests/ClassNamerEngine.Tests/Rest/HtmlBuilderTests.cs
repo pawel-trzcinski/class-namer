@@ -30,15 +30,15 @@ namespace ClassNamerEngine.Tests.Rest
             int body2Index = html.IndexOf("</body", StringComparison.OrdinalIgnoreCase);
             int nameIndex = html.IndexOf(className, StringComparison.OrdinalIgnoreCase);
 
-            Assert.AreNotEqual(-1, html1Index);
-            Assert.AreNotEqual(-1, html2Index);
-            Assert.AreNotEqual(-1, body1Index);
-            Assert.AreNotEqual(-1, body2Index);
+            Assert.That(html1Index, Is.Not.EqualTo(-1));
+            Assert.That(html2Index, Is.Not.EqualTo(-1));
+            Assert.That(body1Index, Is.Not.EqualTo(-1));
+            Assert.That(body2Index, Is.Not.EqualTo(-1));
 
-            Assert.IsTrue(html1Index < body1Index);
-            Assert.IsTrue(body1Index < nameIndex);
-            Assert.IsTrue(nameIndex < body2Index);
-            Assert.IsTrue(body2Index < html2Index);
+            Assert.That(html1Index < body1Index);
+            Assert.That(body1Index < nameIndex);
+            Assert.That(nameIndex < body2Index);
+            Assert.That(body2Index < html2Index);
         }
     }
 }

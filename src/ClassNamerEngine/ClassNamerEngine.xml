@@ -109,7 +109,7 @@
             Interface for random name generator.
             </summary>
         </member>
-        <member name="M:ClassNamerEngine.Puller.IRandomNamePuller.GetRandomClassName">
+        <member name="M:ClassNamerEngine.Puller.IRandomNamePuller.GetRandomClassName(System.String)">
             <summary>
             Generate random class name.
             </summary>
@@ -168,7 +168,7 @@
             </summary>
             <param name="configurationReader"><see cref="T:ClassNamerEngine.Configuration.IConfigurationReader"/> instance.</param>
         </member>
-        <member name="M:ClassNamerEngine.Puller.RandomNamePuller.GetRandomClassName">
+        <member name="M:ClassNamerEngine.Puller.RandomNamePuller.GetRandomClassName(System.String)">
             <summary>
             Generate random class name consisting of 1 to 4 parts. The parts are described in <see cref="T:ClassNamerEngine.Puller.NamePart"/>.
             </summary>
@@ -184,12 +184,12 @@
             Accept header name.
             </summary>
         </member>
-        <member name="F:ClassNamerEngine.Rest.ClassNamerController.TEXT_HTML">
+        <member name="F:ClassNamerEngine.Rest.ClassNamerController.TextHtml">
             <summary>
             text/html content type.
             </summary>
         </member>
-        <member name="F:ClassNamerEngine.Rest.ClassNamerController.TEXT_PLAIN">
+        <member name="F:ClassNamerEngine.Rest.ClassNamerController.TextPlain">
             <summary>
             text/plain content type.
             </summary>
@@ -207,13 +207,13 @@
             </summary>
             <returns>Always 200.</returns>
         </member>
-        <member name="M:ClassNamerEngine.Rest.ClassNamerController.GetRandomClassName">
+        <member name="M:ClassNamerEngine.Rest.ClassNamerController.GetRandomClassName(System.String)">
             <summary>
             Execute random name generator.
             </summary>
             <returns>Randomly generated class name.</returns>
         </member>
-        <member name="M:ClassNamerEngine.Rest.ClassNamerController.GetRandomClassNameHtml">
+        <member name="M:ClassNamerEngine.Rest.ClassNamerController.GetRandomClassNameHtml(System.String)">
             <summary>
             Execute random name generator.
             </summary>
@@ -252,7 +252,7 @@
             Attribute for adding CORS header.
             </summary>
         </member>
-        <member name="F:ClassNamerEngine.Rest.HeaderAttributes.AddCorsHeaderAttribute.ACCESS_CONTROL_ALLOW_ORIGIN">
+        <member name="F:ClassNamerEngine.Rest.HeaderAttributes.AddCorsHeaderAttribute.AccessControlAllowOrigin">
             <summary>
             Name of CORS header.
             </summary>
@@ -267,12 +267,12 @@
             Attribute for adding GitHub repo attribute.
             </summary>
         </member>
-        <member name="F:ClassNamerEngine.Rest.HeaderAttributes.AddGitHubHeaderAttribute.GIT_HUB">
+        <member name="F:ClassNamerEngine.Rest.HeaderAttributes.AddGitHubHeaderAttribute.GitHub">
             <summary>
             GitHub header name.
             </summary>
         </member>
-        <member name="F:ClassNamerEngine.Rest.HeaderAttributes.AddGitHubHeaderAttribute.GIT_HUB_ADDRESS">
+        <member name="F:ClassNamerEngine.Rest.HeaderAttributes.AddGitHubHeaderAttribute.GitHubAddress">
             <summary>
             GitHub header value.
             </summary>

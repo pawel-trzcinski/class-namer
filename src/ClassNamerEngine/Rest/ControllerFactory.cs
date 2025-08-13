@@ -12,9 +12,9 @@ namespace ClassNamerEngine.Rest
     /// </summary>
     public class ControllerFactory : IControllerFactory
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(ControllerFactory));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(ControllerFactory));
 
-        private readonly Container container;
+        private readonly Container _container;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ControllerFactory"/> class.
@@ -30,25 +30,25 @@ namespace ClassNamerEngine.Rest
         /// <param name="container"><see cref="SimpleInjector"/> container.</param>
         public ControllerFactory(Container container)
         {
-            this.container = container;
+            _container = container;
         }
 
         /// <inheritdoc/>
         public object CreateController(ControllerContext context)
         {
-            log.Debug("Creating controller");
+            Log.Debug("Creating controller");
 
             if (context == null)
             {
                 throw new ArgumentNullException(nameof(context));
             }
 
-            Scope scope = ThreadScopedLifestyle.BeginScope(container);
+            Scope scope = ThreadScopedLifestyle.BeginScope(_container);
 
-            log.Debug("Seting Scope feature");
+            Log.Debug("Seting Scope feature");
             context.HttpContext.Features.Set<Scope>(scope);
 
-            log.Debug("Getting controller from incection container");
+            Log.Debug("Getting controller from incection container");
             return scope.GetInstance<IClassNamerController>();
         }
 
@@ -60,7 +60,7 @@ namespace ClassNamerEngine.Rest
                 throw new ArgumentNullException(nameof(context));
             }
 
-            log.Debug("Disposing of Scope feature");
+            Log.Debug("Disposing of Scope feature");
             context.HttpContext.Features.Get<Scope>().Dispose();
         }
     }

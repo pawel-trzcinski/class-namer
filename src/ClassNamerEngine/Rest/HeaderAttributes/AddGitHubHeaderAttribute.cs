@@ -8,18 +8,18 @@
         /// <summary>
         /// GitHub header name.
         /// </summary>
-        public const string GIT_HUB = "GitHub";
+        public const string GitHub = "GitHub";
 
         /// <summary>
         /// GitHub header value.
         /// </summary>
-        public const string GIT_HUB_ADDRESS = "https://github.com/pawel-trzcinski/class-namer";
+        public const string GitHubAddress = "https://github.com/pawel-trzcinski/class-namer";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AddGitHubHeaderAttribute"/> class.
         /// </summary>
         public AddGitHubHeaderAttribute()
-            : base(GIT_HUB, GIT_HUB_ADDRESS)
+            : base(GitHub, GitHubAddress)
         {
         }
     }

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
 
     <DocumentationFile>D:\Programming\ClassNamer\src\ClassNamer\ClassNamer.xml</DocumentationFile>
   </PropertyGroup>
@@ -17,10 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="log4net.ClassNamer.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -30,14 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <PackageReference Include="System.Formats.Asn1" Version="9.0.8" />
+    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
   </ItemGroup>
 
   <ItemGroup>

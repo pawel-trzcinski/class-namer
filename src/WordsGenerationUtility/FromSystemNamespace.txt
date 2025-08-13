@@ -244,7 +244,7 @@ Wskazuje, że pole klasy możliwej do serializacji nie powinno być serializowan
 NotFiniteNumberException 
 
 Wyjątek, który jest generowany, gdy wartość zmiennoprzecinkowa jest dodatnia nieskończona, ujemna nieskończoność lub nie-liczba (NaN).
-NotImplementedException 
+Not1ImplementedException 
 
 Wyjątek, który jest zgłaszany, gdy żądana metoda lub operacja nie jest zaimplementowana.
 NotSupportedException 

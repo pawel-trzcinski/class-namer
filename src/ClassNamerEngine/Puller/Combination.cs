@@ -38,8 +38,8 @@ namespace ClassNamerEngine.Puller
                 throw new ArgumentException($"{weight} must be greater or equal to 1 and lesser or equal to 100", nameof(weight));
             }
 
-            this.Parts = new ReadOnlyCollection<NamePart>(parts);
-            this.Weight = weight;
+            Parts = new ReadOnlyCollection<NamePart>(parts);
+            Weight = weight;
         }
     }
 }

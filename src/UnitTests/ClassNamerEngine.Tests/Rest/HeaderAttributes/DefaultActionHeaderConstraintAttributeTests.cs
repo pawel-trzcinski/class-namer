@@ -10,14 +10,14 @@ namespace ClassNamerEngine.Tests.Rest.HeaderAttributes
         public void ItReturnsTrue()
         {
             DefaultActionHeaderConstraintAttribute attribute = new DefaultActionHeaderConstraintAttribute();
-            Assert.IsTrue(attribute.Accept(null));
+            Assert.That(attribute.Accept(null));
         }
 
         [Test]
         public void HasOrder100()
         {
             DefaultActionHeaderConstraintAttribute attribute = new DefaultActionHeaderConstraintAttribute();
-            Assert.AreEqual(100, attribute.Order);
+            Assert.That(attribute.Order, Is.EqualTo(100));
         }
     }
 }

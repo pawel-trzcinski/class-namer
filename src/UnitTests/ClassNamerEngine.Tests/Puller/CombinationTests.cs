@@ -32,7 +32,7 @@ namespace ClassNamerEngine.Tests.Puller
         }
 
         [Test]
-        public void WeightInRangeAllowed([Range(1, 100)]int weight)
+        public void WeightInRangeAllowed([Range(1, 100)] int weight)
         {
             Assert.DoesNotThrow(() => new Combination(new NamePart[] { NamePart.Adjective }, weight));
         }

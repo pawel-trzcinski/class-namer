@@ -10,12 +10,12 @@ namespace ClassNamerEngine.Configuration
     /// </summary>
     public class ConfigurationReader : IConfigurationReader
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(ConfigurationReader));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(ConfigurationReader));
 
-        private static readonly object lockObject = new object();
-        private volatile ClassNamerConfiguration classNamerConfiguration;
+        private static readonly object LockObject = new object();
+        private volatile ClassNamerConfiguration _classNamerConfiguration;
 
-        private readonly string settingsFile;
+        private readonly string _settingsFile;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfigurationReader"/> class.
@@ -31,35 +31,35 @@ namespace ClassNamerEngine.Configuration
         /// <param name="settingsFile">File to read configuration from.</param>
         protected ConfigurationReader(string settingsFile)
         {
-            this.settingsFile = settingsFile;
+            _settingsFile = settingsFile;
         }
 
         /// <inheritdoc/>
         public ClassNamerConfiguration ReadConfiguration()
         {
-            if (this.classNamerConfiguration != null)
+            if (_classNamerConfiguration != null)
             {
-                return this.classNamerConfiguration;
+                return _classNamerConfiguration;
             }
 
-            lock (lockObject)
+            lock (LockObject)
             {
-                if (this.classNamerConfiguration != null)
+                if (_classNamerConfiguration != null)
                 {
-                    return this.classNamerConfiguration;
+                    return _classNamerConfiguration;
                 }
 
-                log.Info($"Reading configuration from {settingsFile}");
+                Log.Info($"Reading configuration from {_settingsFile}");
 
-                string jsonText = File.ReadAllText(settingsFile);
+                string jsonText = File.ReadAllText(_settingsFile);
                 JObject settings = JObject.Parse(jsonText);
 
-                log.Debug($"Configuration from file: {settings.ToString()}");
+                Log.Debug($"Configuration from file: {settings.ToString()}");
 
-                this.classNamerConfiguration = settings[nameof(ClassNamerConfiguration)].ToObject<ClassNamerConfiguration>();
+                _classNamerConfiguration = settings[nameof(ClassNamerConfiguration)].ToObject<ClassNamerConfiguration>();
             }
 
-            return this.classNamerConfiguration;
+            return _classNamerConfiguration;
         }
     }
 }
