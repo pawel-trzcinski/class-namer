@@ -22,7 +22,7 @@ namespace ClassNamerEngine.Rest.HeaderAttributes
                 throw new ArgumentNullException(nameof(context));
             }
 
-            return context.RouteContext.HttpContext.Request.Headers.TryGetValue(ClassNamerController.ACCEPT, out StringValues values) && values.Any(v => (v ?? String.Empty).IndexOf(ClassNamerController.TEXT_HTML, StringComparison.OrdinalIgnoreCase) >= 0);
+            return context.RouteContext.HttpContext.Request.Headers.TryGetValue(ClassNamerController.ACCEPT, out StringValues values) && values.Any(v => (v ?? String.Empty).IndexOf(ClassNamerController.TextHtml, StringComparison.OrdinalIgnoreCase) >= 0);
         }
     }
 }

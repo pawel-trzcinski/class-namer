@@ -31,17 +31,17 @@ namespace ClassNamerEngine.Tests.Rest.HeaderAttributes
             };
 
             IHeaderDictionary headers = context.RouteContext.HttpContext.Request.Headers;
-            headers.Add(headerName, new StringValues(ClassNamerController.TEXT_HTML));
+            headers.Add(headerName, new StringValues(ClassNamerController.TextHtml));
 
             HtmlActionHeaderConstraintAttribute attribute = new HtmlActionHeaderConstraintAttribute();
 
-            Assert.IsFalse(attribute.Accept(context));
+            Assert.That(!attribute.Accept(context));
         }
 
-        [TestCase(ClassNamerController.TEXT_HTML)]
-        [TestCase("Allow" + ClassNamerController.TEXT_HTML)]
-        [TestCase(ClassNamerController.TEXT_HTML + "Status")]
-        [TestCase("Whatever" + ClassNamerController.TEXT_HTML + "Status")]
+        [TestCase(ClassNamerController.TextHtml)]
+        [TestCase("Allow" + ClassNamerController.TextHtml)]
+        [TestCase(ClassNamerController.TextHtml + "Status")]
+        [TestCase("Whatever" + ClassNamerController.TextHtml + "Status")]
         public void AcceptContainsHtml(string headerValue)
         {
             ActionConstraintContext context = new ActionConstraintContext()
@@ -54,14 +54,14 @@ namespace ClassNamerEngine.Tests.Rest.HeaderAttributes
 
             HtmlActionHeaderConstraintAttribute attribute = new HtmlActionHeaderConstraintAttribute();
 
-            Assert.IsTrue(attribute.Accept(context));
+            Assert.That(attribute.Accept(context));
         }
 
         [Test]
         public void HasOrder0()
         {
             HtmlActionHeaderConstraintAttribute attribute = new HtmlActionHeaderConstraintAttribute();
-            Assert.AreEqual(0, attribute.Order);
+            Assert.That(attribute.Order, Is.Zero);
         }
     }
 }

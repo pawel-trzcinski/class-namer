@@ -10,11 +10,11 @@ namespace ClassNamerEngine.Rest
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "It's AspNetCore reflection stuff")]
     public class Startup
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(Startup));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(Startup));
 
         public void ConfigureServices(IServiceCollection services)
         {
-            log.Debug("Startup.ConfigureServices");
+            Log.Debug("Startup.ConfigureServices");
 
             services.AddMvc();
             services.AddSingleton<IControllerFactory, ControllerFactory>();
@@ -23,7 +23,7 @@ namespace ClassNamerEngine.Rest
 
         public void Configure(IApplicationBuilder app)
         {
-            log.Debug("Startup.Configure");
+            Log.Debug("Startup.Configure");
 
             app.UseMvc();
         }

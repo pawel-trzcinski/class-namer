@@ -10,17 +10,17 @@ namespace ClassNamerEngine.Rest
     /// </summary>
     public class HtmlBuilder : IHtmlBuilder
     {
-        private const string PLACEHOLDER = "[PLACEHOLDER]";
-        private static readonly int placeholderLength = PLACEHOLDER.Length;
+        private const string Placeholder = "[PLACEHOLDER]";
+        private static readonly int PlaceholderLength = Placeholder.Length;
 
-        private static readonly ILog log = LogManager.GetLogger(typeof(HtmlBuilder));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(HtmlBuilder));
 
-        private static readonly object lockObject = new object();
-        private volatile bool htmlFileRead;
+        private static readonly object LockObject = new object();
+        private volatile bool _htmlFileRead;
 
-        private string htmlPrefix;
-        private string htmlSuffix;
-        private int htmlPartsLength;
+        private string _htmlPrefix;
+        private string _htmlSuffix;
+        private int _htmlPartsLength;
 
         /// <inheritdoc/>
         public string BuildHtml(string className)
@@ -30,42 +30,42 @@ namespace ClassNamerEngine.Rest
                 throw new ArgumentNullException(nameof(className));
             }
 
-            log.Debug($"Building html for {className}");
+            Log.Debug($"Building html for {className}");
 
             Initialize();
 
-            StringBuilder sb = new StringBuilder(htmlPartsLength + className.Length);
-            sb.Append(htmlPrefix);
+            StringBuilder sb = new StringBuilder(_htmlPartsLength + className.Length);
+            sb.Append(_htmlPrefix);
             sb.Append(className);
-            sb.Append(htmlSuffix);
+            sb.Append(_htmlSuffix);
             return sb.ToString();
         }
 
         private void Initialize()
         {
-            if (this.htmlFileRead)
+            if (_htmlFileRead)
             {
                 return;
             }
 
-            lock (lockObject)
+            lock (LockObject)
             {
-                if (this.htmlFileRead)
+                if (_htmlFileRead)
                 {
                     return;
                 }
 
-                log.Debug("Initializing HtmlBuilder");
+                Log.Debug("Initializing HtmlBuilder");
 
                 string defaultFileText = File.ReadAllText(Path.Combine(".", "Data", "Default.html"));
 
-                int indexOfPlaceholder = defaultFileText.IndexOf(PLACEHOLDER, StringComparison.OrdinalIgnoreCase);
+                int indexOfPlaceholder = defaultFileText.IndexOf(Placeholder, StringComparison.OrdinalIgnoreCase);
 
-                this.htmlPrefix = defaultFileText.Substring(0, indexOfPlaceholder);
-                this.htmlSuffix = defaultFileText.Substring(indexOfPlaceholder + placeholderLength);
-                this.htmlPartsLength = this.htmlPrefix.Length + this.htmlSuffix.Length;
+                _htmlPrefix = defaultFileText.Substring(0, indexOfPlaceholder);
+                _htmlSuffix = defaultFileText.Substring(indexOfPlaceholder + PlaceholderLength);
+                _htmlPartsLength = _htmlPrefix.Length + _htmlSuffix.Length;
 
-                htmlFileRead = true;
+                _htmlFileRead = true;
             }
         }
     }

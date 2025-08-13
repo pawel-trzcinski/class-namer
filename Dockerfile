@@ -1,24 +1,14 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:2.1 as build-stage
+FROM mcr.microsoft.com/dotnet/sdk:8.0 as build-stage
 
 WORKDIR /app
 COPY src .
 
 RUN dotnet build ClassNamer.sln -c Release
+RUN dotnet test --logger:"console;verbosity=detailed"
+RUN dotnet publish /app/ClassNamer/ClassNamer.csproj -c Release -o /out
 
-RUN dotnet vstest --logger:"console;verbosity=detailed" \
-    /app/UnitTests/ClassNamer.Tests/bin/Release/netcoreapp2.1/ClassNamer.Tests.dll \
-    /app/UnitTests/ClassNamerEngine.Tests/bin/Release/netcoreapp2.1/ClassNamerEngine.Tests.dll
-
-RUN dotnet publish /app/ClassNamer/ClassNamer.csproj -c Release -o /out -f netcoreapp2.1
-
-#FROM mcr.microsoft.com/dotnet/core/aspnet:2.1-stretch-slim
-# 270
-
-#FROM mcr.microsoft.com/dotnet/core/runtime:2.1
-# 197
-
-FROM mcr.microsoft.com/dotnet/core/runtime:2.1-alpine
-# 103MB
+###
+FROM mcr.microsoft.com/dotnet/runtime:8.0-jammy-chiseled
 
 COPY --from=build-stage /out /out
 

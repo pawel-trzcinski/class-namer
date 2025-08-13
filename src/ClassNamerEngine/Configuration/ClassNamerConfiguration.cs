@@ -13,11 +13,11 @@ namespace ClassNamerEngine.Configuration
     /// </summary>
     public class ClassNamerConfiguration
     {
-        private static readonly char[] splitCharacters = new char[] { ' ', '\t', '\r', '\n', ',', '.', ';', '-', ':' };
+        private static readonly char[] SplitCharacters = new char[] { ' ', '\t', '\r', '\n', ',', '.', ';', '-', ':' };
 
-        private static readonly string lowerAlphabet = "qwertyuioplkjhgfdsazxcvbnm".ToLowerInvariant();
-        private static readonly string upperAlphabet = lowerAlphabet.ToUpperInvariant();
-        private static readonly HashSet<char> allowedCharacters = new HashSet<char>(lowerAlphabet + upperAlphabet);
+        private static readonly string LowerAlphabet = "qwertyuioplkjhgfdsazxcvbnm".ToLowerInvariant();
+        private static readonly string UpperAlphabet = LowerAlphabet.ToUpperInvariant();
+        private static readonly HashSet<char> AllowedCharacters = new HashSet<char>(LowerAlphabet + UpperAlphabet);
 
         /// <summary>
         /// Gets collection of possible <see cref="NamePart"/> combinations along with weight associated to it.
@@ -37,8 +37,8 @@ namespace ClassNamerEngine.Configuration
         [JsonConstructor]
         public ClassNamerConfiguration(Combination[] combinations, Dictionary<NamePart, string[]> wordsSet)
         {
-            this.Combinations = new ReadOnlyCollection<Combination>(combinations);
-            this.WordsSet = wordsSet.ToDictionary
+            Combinations = new ReadOnlyCollection<Combination>(combinations);
+            WordsSet = wordsSet.ToDictionary
                 (
                     k => k.Key,
                     v => (IReadOnlyCollection<string>)new ReadOnlyCollection<string>(v.Value.SelectMany(SplitIntoWords).Select(NormalizeWord).ToArray())
@@ -49,7 +49,7 @@ namespace ClassNamerEngine.Configuration
 
         private static string[] SplitIntoWords(string word)
         {
-            return word.Split(splitCharacters).Where(p => !String.IsNullOrWhiteSpace(p)).Select(p => p.Trim()).ToArray();
+            return word.Split(SplitCharacters).Where(p => !String.IsNullOrWhiteSpace(p)).Select(p => p.Trim()).ToArray();
         }
 
         private static string NormalizeWord(string word)
@@ -59,11 +59,11 @@ namespace ClassNamerEngine.Configuration
 
         private void ValidateConfiguration()
         {
-            foreach (string word in this.WordsSet.Values.SelectMany(p => p))
+            foreach (string word in WordsSet.Values.SelectMany(p => p))
             {
                 foreach (char wordCharacter in word)
                 {
-                    if (!allowedCharacters.Contains(wordCharacter))
+                    if (!AllowedCharacters.Contains(wordCharacter))
                     {
                         throw new ArgumentException($"Invalid character '{wordCharacter}' in word {word}");
                     }

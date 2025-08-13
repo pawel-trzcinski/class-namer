@@ -52,14 +52,14 @@ namespace ClassNamerEngine.Tests.Rest
             };
             bool scopeEnded = false;
 
-            Assert.AreEqual(typeof(TestController).FullName, factory.CreateController(context).GetType().FullName);
+            Assert.That(factory.CreateController(context).GetType().FullName, Is.EqualTo(typeof(TestController).FullName));
 
             Scope scope = context.HttpContext.Features.Get<Scope>();
-            Assert.IsNotNull(scope);
+            Assert.That(scope, Is.Not.Null);
             scope.WhenScopeEnds(() => scopeEnded = true);
 
             factory.ReleaseController(context, null);
-            Assert.IsTrue(scopeEnded);
+            Assert.That(scopeEnded);
         }
     }
 }

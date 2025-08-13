@@ -11,11 +11,11 @@ namespace ClassNamerEngine.Tests.Configuration
         {
             ClassNamerConfiguration configuration = new ConfigurationReader().ReadConfiguration();
 
-            Assert.IsNotNull(configuration);
-            Assert.IsNotNull(configuration.Combinations);
-            Assert.AreEqual(5, configuration.Combinations.Count);
-            Assert.IsNotNull(configuration.WordsSet);
-            Assert.AreEqual(4, configuration.WordsSet.Count);
+            Assert.That(configuration, Is.Not.Null);
+            Assert.That(configuration.Combinations, Is.Not.Null);
+            Assert.That(configuration.Combinations.Count, Is.EqualTo(5));
+            Assert.That(configuration.WordsSet, Is.Not.Null);
+            Assert.That(configuration.WordsSet.Count, Is.EqualTo(4));
         }
     }
 }

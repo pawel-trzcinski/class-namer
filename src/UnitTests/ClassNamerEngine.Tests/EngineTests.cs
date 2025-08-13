@@ -32,7 +32,7 @@ namespace ClassNamerEngine.Tests
                     {
                         try
                         {
-                            Assert.IsEmpty(client.DownloadString("http://127.0.0.1:5000/test"));
+                            Assert.That(client.DownloadString("http://127.0.0.1:5000/test"), Is.Empty);
                             break;
                         }
                         catch (WebException)

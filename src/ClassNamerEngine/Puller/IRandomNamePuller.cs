@@ -9,6 +9,6 @@
         /// Generate random class name.
         /// </summary>
         /// <returns>Randomly generated name consisting of 1 to 4 parts.</returns>
-        string GetRandomClassName();
+        string GetRandomClassName(string required);
     }
 }
